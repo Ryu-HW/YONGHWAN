@@ -49,6 +49,7 @@ a{text-decoration: none; color:#555;}
 .section1 .inner > ul li .pri{
     font-size: 14px;
     color: #222;
+    font-weight: bold;
 }
 .section1 .inner > ul li .pri span{
     color: #ff6733;
