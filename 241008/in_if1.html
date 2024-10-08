@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    var id = "a";
+	var pw = "a";
+	var user_id = prompt("아이디는?","");
+	if(id == user_id) {
+		var user_pw = prompt("비밀번호는?","");
+		if(pw == user_pw) {
+			document.write(user_id+"님 반갑습니다!"); // + 로 함수와 글을 같이 쓸 수 있음
+		} else {
+			alert("비밀번호가 일치하지 않습니다.");
+			location.reload(); //새로고침?
+		}
+	} else {
+		alert("아이디가 일치하지 않습니다.");
+		location.reload();
+	}
+
+
+
+
+
+
+
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>

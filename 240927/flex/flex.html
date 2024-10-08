@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .flex-container{
+            width: 700px;
+            background-color: dodgerblue;
+            display: flex;
+            /* float left 를 대체하는 넘 */
+            flex-wrap: wrap;
+            /* 넓이를 넘어가면 줄바꾸기 */
+            flex-wrap: nowrap;
+            /* 넘쳐도 줄 안 바꾸고 늘어나기 */
+            flex-wrap: wrap-reverse;
+            /* 좌하단부터 1 2 3, 줄바뀜 540pg참고. */
+        }
+        .flex-container > div{
+            background-color: antiquewhite;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 70px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexiable boxes</h1>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+</body>
+</html>

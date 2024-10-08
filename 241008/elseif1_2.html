@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+var mon = prompt("몇 점인가요?", "0");
+var i = 0;
+while(i < 1){
+    if(mon >= 90 & mon <= 100){ 
+        document.write("A학점입니다.");
+        i++;
+    }else if(mon >= 80 && mon <= 90){
+        document.write("B학점입니다.");
+        i++;
+    }else if(mon >= 70 && mon <= 80){
+        document.write("C학점입니다.");
+        i++;
+    }else if(mon >= 60 && mon <= 70){
+        document.write("D학점입니다.");
+        i++;
+    }else if(mon < 60){
+        document.write("F학점입니다.")
+        i++;
+    } else {
+        var mon = prompt("해당점수는 없는 점수입니다. 몇 점인가요?", "0");
+    }
+}
+
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>

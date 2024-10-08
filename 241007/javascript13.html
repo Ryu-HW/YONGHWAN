@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+<script>
+    var h = 180; // 신장
+    var w = 74;
+
+    nomal_W = (h - 100) * 0.9
+    result = w > nomal_W? w - nomal_W : nomal_W - w
+    wt = w > nomal_W?"kg 초과한 것을 알 수 있습니다.":"kg 낮은 것을 알 수 있습니다.";
+    document.write("적정체중은 ",nomal_W, "kg이며, 적정 체중에서" ,result,wt)
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #fff;
+        }
+        form fieldset{
+            margin-bottom: 25px;
+        }
+        form legend{
+            font-size: 15px;
+            font-weight: bold;
+            /* 글자를 진하게 */
+        }
+        form ul li{
+            list-style: none;
+            margin: 15px 0;
+            /* 바깥여백 위아래 15px 좌우는 0이라는 의마 */
+            font-size: 14px;
+        }
+        .reg{
+            font-size: 14px;
+            width: 110px;
+            color: #390;
+            font-weight: bold;
+            float: left;
+            /* 플로트 특성은 위로 올려버림 */
+            margin-right: 10px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>여름방학 특강 수강신청</h1>
+    <form action="">
+        <fieldset>
+            <legend>수강신청</legend>
+            <ul>
+                <li>
+                    <label class="reg" for="id">학번</label>
+                    <input type="text" id="id" autofocus>
+                    <!-- 사이트를 열자마자 autofocus에 타이핑(포커싱)가능 -->
+                </li>
+                <li>
+                    <label class="reg" for="name">이름</label>
+                    <input type="text" id="name">
+                </li>
+                <li>
+                    <label for="class" class="reg">학과</label>
+                    <select name="class" size="3" id="class" multiple>
+                    <!-- size="n" 속성은 드롭다운 리스트가 기본적으로 n개의 항목을 표시하도록 설정합니다.
+multiple 속성은 여러 개의 옵션을 선택할 수 있게 해줍니다. -->
+                        <option value="archi">건축공학</option>
+                        <option value="mechanic">기계공학</option>
+                        <option value="indust">산업공학</option>
+                        <option value="elec">전기전자공학</option>
+                        <option value="comput" selected>컴퓨터공학</option>
+                        <!-- 사이트를 열자마자 선택돼있음 -->
+                        <option value="chemical">화학공학</option>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>

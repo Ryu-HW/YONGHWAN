@@ -1,0 +1,96 @@
+*{padding: 0; margin: 0;}
+ul,li{list-style: none;}
+a{text-decoration: none;}
+#wrap{
+    width: 1200px;
+    height: 700px;
+    border: 1px solid #111;
+    margin: 0 auto;
+}
+header{
+    height: 100px;
+    border: 1px solid #111;
+    background-color: rgba(0, 0, 255, 0.253);
+    position: relative;
+}
+header .logo{
+    float: left;
+}
+header .mainmenu{
+    float: right;
+}
+header .mainmenu>li{
+/* 자식선택자 */
+    float: left;
+}
+header .mainmenu li{
+    background-color: yellow;
+    margin-right: 80px;
+    position: relative;
+}
+header .mainmenu li a{
+    display: block;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    color: #111;
+    text-align: center;
+    font-size: 20px;
+}
+header .mainmenu li ul{
+    display: none;
+    position: absolute;
+}
+header .mainmenu li:hover ul{
+    left: 40px;
+    display: block;
+}
+
+#img_slide{
+    height: 300px;
+    border: 1px solid #111;
+    background-color: rgba(255, 255, 0, 0.301);
+}
+section article{
+    height: 200px;
+    border: 1px solid #111;
+    float: left;
+    width: 400px;
+    box-sizing: border-box;
+}
+section .notice{
+    background-color: aquamarine;
+}
+section .banner{
+    background-color: beige;
+}
+section .icons{
+    background-color: rgba(137, 43, 226, 0.247);
+}
+footer{
+    clear: both;
+    height: 100px;
+    background-color: greenyellow;
+}
+footer>div{
+    box-sizing: border-box;
+    float: left;
+}
+footer .f_logo{
+    width: 250px;
+    height: 100px;
+    background-color: #999;
+    border: 1px solid #111;
+}
+footer .f_menu{
+    width: 950px;
+    height: 50px;
+    background-color: #777;
+    border: 1px solid #111;
+}
+footer .f_copy{
+    width: 950px;
+    height: 50px;
+    background-color: #555;
+    border: 1px solid #111;
+}

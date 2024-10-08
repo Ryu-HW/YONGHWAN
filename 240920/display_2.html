@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    nav ul li{
+        display: inline;
+        /* 블럭요소를 인라인 요소로 변경 , 불릿이 사라짐 */
+        margin: 20px;
+        /* 마진 위아래도 안먹음 */
+        border-top: 3px solid #222;
+        width: 200px;
+        height: 50px;
+        /* 인라인은 넓이높이를 못가짐(단점임) */
+    }
+    nav ul li:hover{
+        /* 요소 호버설정을 따로 css설정할 수 있음 */
+        background-color: aliceblue;
+    }
+    nav ul li a{
+        color: #000;
+        text-decoration: none;
+        /* 밑줄 제거 */
+    }
+</style>
+<body>
+    <nav>
+        <!-- 네브는 블럭요소 네비게이션 약자, div랑 같은데 구분만함-->
+        <ul>
+            <li><a href="#">미나어로</a></li>
+            <li><a href="#">미나어로</a></li>
+            <li><a href="#">미나어로</a></li>
+            <li><a href="#">미나어로</a></li>
+
+    </ul>    
+    </nav>
+
+</body>
+</html>

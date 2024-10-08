@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .container div{
+            width: 100vw;
+            height: 100vh;
+        }
+        .b1{
+            background-color: aquamarine;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+        .b2{
+            background-color: chartreuse;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+        .b3{
+            background-color: darkcyan;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+            background-attachment: fixed;
+            /* 배경고정 확인해볼것을 권장 */
+        }
+        .b4{
+            background-color: darkgoldenrod;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+            background-attachment: fixed;
+
+            
+        }
+        .b5{
+            background-color: hotpink;
+            background: url(images/back5.jpg) no-repeat fixed 50% 50% / cover;
+            /* 축약 가능한데, 순서가 중요 
+                사이즈를 나타내는 경우엔 사이에 / 를 써줘야 함 */
+            /* no-repeat, fixed는 순서를 바꿀 수 있지만 50,50포함 뒤에것은 바꿀 수 없다 */
+
+        }
+    </style>
+<body>
+    <div class="container">
+        <div class="b1">배경1</div>
+        <div class="b2">배경2</div>
+        <div class="b3">배경3</div>
+        <div class="b4">배경4</div>
+        <div class="b5">배경5</div>
+
+    </div>
+</body>
+</html>

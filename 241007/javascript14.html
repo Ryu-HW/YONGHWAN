@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var name = prompt("당신의 이름은?","홍길동") //사용자로부터 입력된 값을 문자형 데이터로 반환
+        var height = prompt("당신의 신장은?","0")
+        var weight = prompt("당신의 몸무게는?","0")
+        
+        var nomal_W = (height - 100) * 0.9;
+        var result = weight >= nomal_W * 0.95 && weight <= nomal_W * 1.05;
+        result = result ? "적정 체중입니다." : "적정 체중이 아닙니다."
+        document.write(name,"님은 ", result)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

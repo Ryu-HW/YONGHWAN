@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>474pg</title>
+    <style>
+        #myball{
+            position: relative;
+            left: 10px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            border: 1px solid black;
+            background: url(img/f1.png) no-repeat 50% 50%;
+            animation-name: myani;
+            /* 이름지정 class와 같은듯 */
+            animation-duration: 3s;
+            /* 트렌지션이랑 비슷함 */
+            animation-iteration-count: 3;
+            /* 몇 번 실행할 것인가 (사이트실행후) */
+        }
+        @keyframes myani{
+            0%{left: 10px}
+            100%{left: 500px;}
+            /* 포지션위치 */
+        }
+    </style>
+</head>
+<body>
+    <div id="myball">
+
+    </div>
+</body>
+</html>

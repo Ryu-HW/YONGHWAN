@@ -1,0 +1,102 @@
+*{padding: 0; margin: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #fff;}
+.container{
+    width: 1000px;
+    height: 650px;
+    border: 1px solid black;
+}
+header{
+    height: 650px;
+    width: 200px;
+    background-color: #aaa;
+    float: left;
+}
+.MENU>li{
+    width: 200px;
+    height: 50px;
+    background-color: #444;
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+    color: #fff;
+}
+.MENU>li>ul{
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    display: none;
+    background-color: #333;
+}
+.MENU>li>ul>li{
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    margin: 16px 10px;
+    background-color: #bbb;
+    border-radius: 5px;
+    
+}
+.MENU>li>ul>li>a{
+    display: block;
+    width: 80px;
+    height: 30px;
+}
+.MENU>li:hover>ul{
+    display: block;
+}
+.MENU>li>ul>li:hover>a{
+    background-color: #fff;
+    border-radius: 5px;
+    color: #111;
+}
+
+
+.main{
+    width: 800px;
+    height: 650px;
+    background-color: #bbb;
+    float: left;
+}
+.main .img_slide{
+    width: 800px;
+    height: 350px;
+    background-color: #ccc;
+}
+.main .section{
+    width: 800px;
+    height: 200px;
+    background-color: #ddd
+}
+.main .section .box{
+    width: 33.33%;
+    height: 200px;
+    float: left;
+}
+.main .section .box1{
+    background-color: #999;
+}
+.main .section .box2{
+    background-color: #888;
+}
+.main .section .box3{
+    background-color: #777;
+}
+.main .banner div{
+    float: left;
+}
+.main .banner .b_logo{
+    height: 100px;
+    width: 200px;
+    background-color: #666;
+}
+.main .banner .b_menu{
+    height: 50px;
+    width: 600px;
+    background-color: #555;
+}
+.main .banner .b_copy{
+    height: 50px;
+    width: 600px;
+    background-color: #444;
+}

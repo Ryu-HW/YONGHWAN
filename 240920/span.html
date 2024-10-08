@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인라인</title>
+    <!-- 인라인은 넓이높이가 안먹음 -->
+    <style>
+        span{
+            width: 400px;
+            height: 400px;
+            /* 넓이 높이 안먹음 */
+            padding: 10px;
+            /* 근데 패딩은 먹음 */
+            margin-top: 1000px;
+            /* 마진 위아래는 안먹음 인라인요소라 그런지 */
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <span>
+        아에이오구
+    </span>
+</body>
+</html>

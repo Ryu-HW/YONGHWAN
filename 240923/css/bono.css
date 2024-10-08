@@ -1,0 +1,107 @@
+*{margin: 0;padding: 0;} 
+.bigbox{
+    width: 500px; 
+    height:500px;
+    position: relative;
+    border: 1px dotted #333;
+    margin: 100px auto 0;
+}
+.face{
+    position: absolute;
+    width: 500px;
+    height: 500px; 
+    border-radius: 50%;
+    background-color: #868eda;
+    bottom: 0;
+    border:10px solid #333;
+    box-sizing: border-box;
+
+}
+
+.eyeball{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #000;
+    position: absolute;
+    top: 150px;
+}
+.eyeball.left{left: 100px;}
+.eyeball.right{right: 100px;}
+.nose{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #000;
+    position: absolute;
+    bottom:150px;
+    left:50%;
+    margin-left: -20px;
+    z-index: 1;
+}
+.mouth{
+    width: 130px;
+    height: 100px;
+    background-color: #fff;
+    border: 10px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 70px;
+    box-sizing: border-box;
+}
+.mouth.left{
+    left:210px;
+    transform: rotate(45deg);
+}
+.mouth.right{
+    right:210px;
+    transform: rotate(-45deg);
+}
+.beard{
+    width: 150px;
+    height: 200px;
+    position: absolute;
+}
+.each{
+    width: 120px;
+    height: 1px;
+    border: 1px solid #000;
+    background-color: #000;
+    position: absolute;
+    top: 20px;
+    border-radius: 50%;
+}
+.each1{
+    transform: rotate(20deg);
+
+}
+.each2{
+    top: 80px;
+
+}
+.each3{
+    top: 140px;
+    transform: rotate(-20deg);
+}
+.beard.left{
+    position: absolute;
+    bottom: 0px;
+    left: 70px;
+}
+.each4{
+    transform: rotate(-20deg);
+
+}
+.each5{
+    top: 80px;
+
+}
+.each6{
+    top: 140px;
+    transform: rotate(20deg);
+}
+.beard.right{
+    position: absolute;
+    bottom: 0px;
+    right: 40px;
+}

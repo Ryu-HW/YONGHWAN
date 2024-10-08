@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .txt1{
+            text-decoration: underline;
+            /* <ins></ins>와 같은 효과 */
+        }
+        .txt2{
+            text-decoration: overline;
+        }
+        .txt3{
+            text-decoration: line-through;
+            /* <del></del>와 같은 효과 */
+        }
+        ul{
+            list-style: none;
+            /* 블릿(똥글목차) 없애기 */
+        }
+        ul li{
+            float: left;
+        }
+        ul li a{
+            display: block;
+            /* 아직 안 배움 , 인라인요소를 블럭요소로 바꿔주는 역할?
+                a태그에 넓이와 높이를 주려면 이걸 쓰면 된다 */
+            background-color: blueviolet;
+            color: #fff;
+            padding: 10px;
+            margin: 5px;
+            text-decoration: none;
+        }
+        ul li a:hover{
+            /* 호버 = 마우스를 올린다 */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">제품소개</a></li>
+        <li><a href="#">다운로드</a></li>
+        <li><a href="#">홈페이지</a></li>
+        <!-- a태그는 밑줄에 파란색 클릭하면 보라색이 되는데 텍스트데코레이션넌으로 없앨 수 있다(밑줄을) -->
+    </ul>
+</body>
+</html>

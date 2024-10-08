@@ -1,0 +1,179 @@
+*{
+    margin: 0; padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+a{    text-decoration: none;
+    color: #000;
+}
+.cf::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* 오버플로우 히든처럼 높이를 만들어 줌 */
+#wrap{
+    width: 100%;
+}
+.franchise{
+    width: 100%;
+    padding: 50px 0;
+}
+.inner{
+    width: 1465px;
+    margin: 0 auto;
+    text-align: center;
+}
+.title{
+    width: 100%;
+}
+.title h2{
+    color: #1e1e1e;
+    font-size: 43px;
+    
+}
+.card_list{
+    padding-top: 50px 0;
+    
+    
+}
+.card_list ul{
+    width: 100%;
+}
+.card_list ul li{
+    float: left;
+    box-sizing: border-box;
+    width: 341px;
+    height: 430px;
+    border: 1px solid #000;
+    margin-right: 25px;
+}
+.card_list ul li:nth-child(4){
+    margin-right: 0;
+}
+.card_list ul li .pic{
+    padding: 30px 0;
+}
+
+.card_list ul li .num span{
+    margin: 20px auto;
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: #003273;
+    color: #fff;
+}
+.card_list ul li .txt h3{
+    font-size: 20px;
+    padding: 10px 0;
+    color: #003273;
+}
+.card_list ul li .txt p{
+    color: #1e1e1e;
+}
+.button_wrap p{
+    padding-top: 40px;
+    padding-bottom: 20px;
+    color: #003273;
+    font-size: 20px;
+    line-height: 30px;
+}
+.button_wrap a{
+    margin: 0 auto;
+    display: block;
+    width: 340px;
+    height: 60px;
+    line-height: 60px;
+    background-color: #003273;
+    color: #fff;
+    border: 1px solid transparent;
+    /* 1px 투명선 */
+}
+.button_wrap a:hover{
+    background-color: #fff;
+    color: #1e1e1e;
+    border: 1px solid #1e1e1e;
+}
+footer{
+    width: 100%;
+    height: 240px;
+    background-color: #003273;
+    color: #fff;
+    position: absolute;
+}
+footer .inner{
+    position: relative;
+    box-sizing: border-box;
+    padding: 50px 0;
+
+}
+footer .inner .logo{
+    float: left;
+    width: 220px;
+
+}
+footer .inner .address{
+    float: left;
+    width: 906px;
+    box-sizing: border-box;
+    padding: 0 120px;
+}
+.address .privacy{
+    margin-top: -20px;
+}
+.address .privacy a{
+    color: red;
+}
+.address p{
+    padding-top: 15px;
+    text-align: left;
+    font-size: 12px;
+    margin-left: 100px;
+}
+.address p span{
+    position: relative;
+    display: inline-block;
+    margin:0px 7px 4px 0px;
+}
+.address p span::before{
+    content: "ㅣ";
+    display: inline-block;
+    margin-right: 6px;
+}
+
+footer .family{
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    right: 40px;
+    top: 60px;
+    border: 1px solid #fff;
+    background-color: #003e73;
+}
+.family label{
+    position: absolute;
+    width: 100%;
+    padding: 7px 10px 11px;
+    top: 0;
+    left: 0;
+    color: #fff;
+    box-sizing: border-box;
+}
+.family select{
+    width: 100%;
+    padding: 11px 10px;
+    opacity: 0;
+    cursor: pointer;
+}
+footer .family::after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    right: 5px;
+    top: 15px;
+    background: url(../img/ico.png) no-repeat -300px 0;
+}

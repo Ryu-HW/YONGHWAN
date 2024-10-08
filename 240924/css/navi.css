@@ -1,0 +1,40 @@
+*{margin: 0;padding: 0;}
+ul{list-style: none;}
+#container{
+    width: 800px;
+
+}
+#header{
+    height: 70px;
+
+}
+.one>li{
+    /* 원의 바로 밑의 자식만 선택하기 위한 '>' */
+    float: left;
+}
+.one li{
+    background-color: cornflowerblue
+}
+.one li a{
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+
+}
+.one li ul{
+    display: none;
+    position: absolute;
+    /* left top right bottom을 주지 않았으니 원래의 위치에 나타남 */
+    /* 겹치기 가능 */
+}
+.one li:hover ul{
+    display: block;
+
+}
+.one li a:hover{
+    background-color: yellow;
+}

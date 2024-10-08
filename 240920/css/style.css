@@ -1,0 +1,10 @@
+*{margin: 0; padding: 0;}
+/* 모든 요소에 마진 패딩 0 */
+#container{
+    width: 800px;
+    margin: 0 auto;
+}
+/* 전체넓이 800에 중앙 정렬 */
+header{
+    background-color: #f46075;
+}

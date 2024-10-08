@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float플로트</title>
+    <!-- 하위 선택자에 플로트 레프트를 하면 인라인블럭요소가 되는데,
+      상위 블록이나 인라인 요소에 높이를 주는 순간 그 요소(상위)가 블럭요소가 됨 -->
+</head>
+<style>
+    nav{
+        overflow: hidden;
+        border: 1px solid #222;
+    }
+    nav ul li a{
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+    }
+    nav ul li{
+        width: 100px;
+        height: 50px;
+        float: left;
+        /* 인라인 블럭요소 판정이라 넓이 높이 다 먹음 */
+        border: 2px solid #000000;
+        /* 인라인 블럭이라 마진을 다 먹음 */
+        text-align: center;
+        line-height: 50px;
+        /* 높이와 줄간격을 50으로 동일하게 맞추면 중앙으로 옴, 단, 한 줄일 때만 가능. */
+
+    }
+    nav ul li:hover{
+        background-color: aqua;
+        color: #000000;
+    }
+</style>
+<body>
+    <nav>
+        <!-- 네브는 블럭요소 네비게이션 약자, div랑 같은데 구분만함-->
+        <ul>
+            <li><a href="#">미나어로</a></li>
+            <li><a href="#">미나어로</a></li>
+            <li><a href="#">미나어로</a></li>
+            <li><a href="#">미나어로</a></li>
+
+    </ul>    
+    </nav>
+    <div class="img1b">
+        <img src="img/pic1.jpg" alt="">
+        <img src="img/pic2.jpg" alt="">
+        <img src="img/pic3.jpg" alt="">
+    </div>
+
+</body>
+</html>

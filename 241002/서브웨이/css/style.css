@@ -1,0 +1,675 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none; color: #333;
+}
+ul,li{list-style: none;}
+.cf::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+body{
+    overflow-x: hidden;
+}
+/* 반응형 만들 때 반드시 필요 */
+header{
+    width: 100%;
+    height: 165px;
+    border-top: 5px solid #009223;
+    position: relative;
+}
+.h_top{
+    width: 1200px;
+    height: 90px;
+    margin: 0 auto;
+
+}
+.h_top>a{
+    position: absolute;
+    width: 202px;
+    height: 40px;
+    left: 50%;
+    top: 40px;
+    transform: translate(-50%,0);
+}
+.h_top>a img{
+    display: block;
+    width: 100%;
+}
+.h_top ul{
+    float: right;
+    margin-top: 30px
+}
+.h_top ul li{
+    float: left;
+    margin-left: 15px;
+}
+.h_top ul li a{
+    display: block;
+    height: 20px;
+    padding: 5px 13px;
+}
+.earth{
+    /* 지구본 */
+    text-indent: -9999px;
+    width: 32.5px;
+    padding: 5px 0;
+    background: url(../img/icon_global_subway.png)no-repeat 0px 50%;
+}
+nav{
+    width: 100%;
+
+}
+nav > ul{
+    width: 1200px;
+    height: 75px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 100px;
+    box-sizing: border-box;
+    /* 이거에 대해 알아볼것 */
+    position: relative;
+    z-index: 99;
+}
+nav>ul>li{
+    float: left;
+}
+nav>ul>li>a{
+    display: block;
+    width: 200px;
+    height: 75px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 75px;
+}
+nav ul ul a{
+    font-size: 15px;
+    color: #666;
+    padding: 8px 0 9px;
+    display: block;
+    letter-spacing: -.0.05;
+    font-weight: bold;
+}
+nav ul li ul li{
+    width: 200px;
+}
+nav ul li ul{
+    position: absolute;
+    top: 75px;
+    text-align: center;
+    height: 200px;
+    overflow: hidden;
+    transition: all 0.2s;
+    padding-top: 20px;
+    opacity: 0;
+}
+nav ul:hover li ul{
+    opacity: 1;
+    padding-top: 35px;
+}
+nav ul:hover + .shadow{
+    height: 250px;
+}
+.shadow{
+    position: absolute;
+    left: 0;
+    top: 165px;
+    width: 100%;
+    background-color: #fff;
+    height: 0px;
+    z-index: 2;
+    transition: all 0.2s;
+    border-top: 1px solid #ccc;
+
+}
+
+
+
+
+section{
+    width: 100%;
+    position: relative;
+}
+.slide{
+    height: 440px;
+    width: 100%;
+    position: relative;
+}
+.slide .sg{
+    width: 1920px;
+    height: 440px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slide .sg a{
+    width: 1920px;
+    height: 440px;
+    position: absolute;
+    left: 0;
+}
+.slide .sg a.i_01{
+    /* <>에 같이 묶인 애는 붙여쓸 수 있다 */
+    background: url(../img/00_써브웨이_main_02_20200427112753722.jpg) no-repeat center;
+}
+.slide .sg a.i_02{
+    left: 100%;
+    background: url(../img/main_pc_1920x440_20200427112254027.jpg) no-repeat center;
+}
+.slide .sg a.i_03{
+    left: 200%;
+    background: url(../img/main_pc_1920x440_20200528061058713.jpg) no-repeat center;
+}
+.slide .sg a.i_04{
+    left: 300%;
+    background: url(../img/main_pc_1920x440_20200529050816305.jpg) no-repeat center;
+}
+.slide .dot{
+    position: absolute;
+    left: 50%;
+    margin-left: 500px;
+    bottom: 40px;
+    width: 100px;
+    height: 10px;
+}
+.slide .dot a{
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+    float: left;
+    text-indent: -9999px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+.slide .dot a.on{
+    background-color: #ffc300;
+    width: 30px;
+}
+/* 자바스크립트로 on을 옮길 수 있음 */
+#sub{
+    width: 1200px;
+    margin: 0 auto;
+    height: 80px;
+    position: relative;
+}
+#sub .sub_wrap{
+    position: absolute;
+    right: 0;
+    top: -30px;
+}
+#sub .sub_wrap a{
+    display: block;
+    width: 300px;
+    height: 80px;
+    float: left;
+    font-size: 22px;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+.sw_left{
+    line-height: 35px;
+    padding-left: 125px;
+    background: #ffce32 url(../img/icon_map.png) no-repeat 33% 50%;
+    border-radius: 30px 0px 0px 0px;
+    color: #292929;
+    letter-spacing: -2px;
+}
+.sw_right{
+    line-height: 35px;
+    padding-left: 100px;
+    background: #009223 url(../img/icon_franchise.png) no-repeat 20% 50%;
+    border-radius: 0px 0px 30px 0px;
+    color: #fff;
+    letter-spacing: -2px;
+
+}
+.section02{
+    width: 100%;
+}
+.s02_wrap{
+    width: 1200px;
+    height: 560px;
+    margin: 0 auto;
+    padding-top: 60px;
+    position: relative;
+}
+/* 탭메뉴 */
+.menu_top{
+    width:1200px;
+    height:77px;
+    background: url(../img/bul_tit.png) no-repeat 0 50%;
+}
+
+.menu_top h3{
+    height:77px;
+	padding:12px 0 0 25px;
+	font-size:40px;
+	box-sizing:border-box;
+	width:50%;
+	float:left;
+}
+.menu_top .mt_right{
+	float:right;
+	margin-top:30px;
+}
+.menu_top .mt_right li{
+	float:left;
+	padding-right:25px;
+	margin-right:23px;
+	position:relative;
+}
+.menu_top .mt_right li.on a{
+    color: #009223;
+}
+.menu_top .mt_right li::after{
+    position: absolute;
+    right: 0;
+    top: 4px;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background-color: #ddd;
+}
+.menu_top .mt_right li:nth-child(4)::after{
+    display: none;
+}
+.menu_top .mt_right li a{
+    display: block;
+    font-size: 16px;
+    color: #666;
+    font-weight: bold;
+}
+/* 햄버거나열 */
+.menu_wrap .menu{
+    width: 1300px;
+    height: 320px;
+    margin-top: 33px;
+    overflow: hidden;
+    padding-left: 30px;
+}
+.menu ul li{
+    width: 260px;
+    height: 320px;
+    float: left;
+    padding: 0 5px;
+    text-align: center;
+    margin-right: 30px;
+    position: relative;
+}
+/* .menu ul li:first-child{
+    margin-right: 0;
+} */
+.menu ul li img{
+    width: 100%;
+    height: auto;
+}
+.menu ul li a p{
+    font-size: 13px;
+    color: #999;
+    letter-spacing: -0.04em;
+}
+.menu ul li:hover{
+    width: 310px;
+}
+.menu ul li a strong{
+    display: block;
+    margin: 2px 0 10px;
+    text-align: center;
+}
+.menu ul li:hover strong{
+    font-size: 22px;
+    margin-top: -10px;
+    margin-right: -50px;
+}
+.menu ul li:hover p{
+    display: none;
+}
+.menu ul li:hover a img{
+    width: 350px;
+    height: 238px;
+}
+.menu ul li::after{
+    content: '';
+    position: absolute;
+    width: 98px;
+    height: 98px;
+    position: absolute;
+    left: 60%;
+    top: 55%;
+    background: url(../img/btn_more.png)no-repeat 0 0;
+    margin: -22px 0 0 -42px;
+    opacity: 0;
+}
+.menu ul li:hover::after{
+    opacity: 1;
+}
+.prev{
+    display: block;
+    position: absolute;
+    top: 35%;
+    left: -150px;
+    width: 50px;
+    height: 50px;
+    background: url(../img/icon_event_slider_arr.png)no-repeat 0 0;
+    text-indent: -9999px;
+}
+.prev:hover{
+    background: url(../img/icon_event_slider_arr.png)no-repeat 0 -50px;
+
+}
+.next{
+    display: block;
+    position: absolute;
+    top: 35%;
+    right: -150px;
+    width: 50px;
+    height: 50px;
+    background: url(../img/icon_event_slider_arr.png)no-repeat -50px 0;
+    text-indent: -9999px;
+
+}
+.next:hover{
+    background: url(../img/icon_event_slider_arr.png)no-repeat -50px -50px;
+
+}
+/* section03 */
+#section03{
+    width: 100%;
+    height:790px;
+    background: url(../img/bg_content.gif) repeat 0 0;
+}
+.s03_wrap{
+    width: 1200px;
+    height:790px;
+    margin:0 auto;
+	padding:80px 0;
+	box-sizing:border-box;
+}
+.s03_wrap{
+    width: 1300px;
+    height:790px;
+    margin:0 auto;
+	padding:80px 0;
+	box-sizing:border-box;
+}
+.content{
+    width: 100%;
+    height: 300px;
+}
+.cont_01{
+    float:left;
+    width: 400px;
+    height:100%;
+    background: url(../img/bg_utilization.png) no-repeat 0 0;
+    margin-left: 55px;
+    position: relative;
+}
+.cont_02{
+    float: right;
+    width:825px;
+    height:100%;
+    background: url(../img/img_subway_history.png) no-repeat 0 0;
+    position: relative;
+}
+.con_top h3{
+    height: 80px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 40px;
+    letter-spacing: -0.03em;
+}
+.cont_01 h3{
+    position: absolute;
+    top: 38px;
+    left: 39px;
+    
+}
+.cont_02 h3{
+    position: absolute;
+    top: 38px;
+    left: 410px;
+}
+.cont_01 a{
+    position: absolute;
+    left: 41px;
+    bottom: 42px;
+    display: block;
+    width: 92px;
+    line-height: 36px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    text-align: center;
+}
+.cont_02 a{
+    display: block;
+    text-align: center;
+    line-height: 36px;
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    left: 410px;
+    bottom: 42px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    width: 128px;
+}
+.con_bott{
+    margin-top: 30px;
+}
+.cont_03{
+    float: left;
+    width: 870px;
+    height: 100%;
+    background-color: #fff;
+    margin-left: 55px;
+    position: relative;
+    border-radius: 30px 0 30px 0;
+}
+.cont_03 .new{
+    float: left;
+    margin-top: 75px;
+    margin-left: 60px;
+}
+.new h2{
+    margin-top: 10px;
+    height:70px;
+	padding:12px 0 0 25px;
+	font-size:30px;
+	box-sizing:border-box;
+	width:200px;
+    font-weight: bold;
+    float:left;
+}
+.cont_03 .new p{
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    padding-left: 15px;
+}
+
+.cont_03 ul{
+    float: left;
+    margin-top: 76px;
+    margin-left: 100px;
+}
+.cont_03 ul .more a{
+    color: #999999;
+    font-size: 14px;
+}
+.new{
+    background: url(../img/bul_tit.png) no-repeat 0 0;
+    text-align: center;
+}
+
+.cont_03 ul li a{
+    display: inline-block;
+    font-size: 16px;
+    color: #292929;
+    letter-spacing: -0.04em;
+    margin-top: 21px;
+    font-weight: bold;
+}
+.cont_03 ul li:first-child a{
+    margin-top: 0;
+}
+.cont_03 ul li a:hover{
+    color: #009223;
+    text-decoration: underline;
+}
+
+.cont_04{
+    float: left;
+    width: 270px;
+    height: 100%;
+    margin-left: 45px;
+    background: url('../img/270X300\ \(1\)_20230829025721267.jpg');
+    border-radius: 0 30px 0 30px;
+    position: relative;
+}
+#section04{
+    background-color: #fff;
+    width: 100%;
+}
+.s04_wrap{
+    width: 1200px;
+    margin: 0 auto;
+    height: 150px;
+}
+.box{
+    float: left;
+    box-sizing: border-box;
+    width: 220px;
+    height: 50px;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 60px;
+    padding-left: 70px;
+    margin-right: 10px;
+}
+.box h4{
+    font-size: 18px;
+    color: #292929;
+    letter-spacing: -0.04em;
+}
+.box p{
+    color: #999999;
+    font-size: 13px;
+    letter-spacing: -0.02em;
+}
+.b_img1{
+    background: url(../img/icon_quickmenu.png) no-repeat 0px 0px;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: -20px;
+    top: -10px;
+}
+.b_img2{
+    background: url(../img/icon_quickmenu.png) no-repeat -70px 0px;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: -20px;
+    top: -10px;
+}
+.b_img3{
+    background: url(../img/icon_quickmenu.png) no-repeat -140px 0px;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: -20px;
+    top: -10px;
+}
+.b_img4{
+    background: url(../img/icon_quickmenu.png) no-repeat -210px 0px;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: -20px;
+    top: -10px;
+}
+footer{
+    width: 100%;
+    background-color: #292929;
+    color: #666666;
+}
+.f_top{
+    margin: 0 auto;
+    width: 1200px;
+    height: 50px;
+    line-height: 50px;
+}
+.f_top strong{
+    color: #aaa;
+}
+.f_top p{
+    font-size: 14px;
+    letter-spacing: -0.05em;
+    word-spacing: 40px;
+}
+.f_top p a{
+    color: #666666;
+}
+footer hr{
+    border: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #444;
+}
+.f_bot{
+    margin: 0 auto;
+    width: 1200px;
+    height: 55px;
+    padding: 20px 0;
+    position: relative;
+
+}
+.f_bot p{
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 0.005em;
+}
+
+.f_bot p span{
+    padding-left: 30px;
+    position: relative;
+}
+.f_bot p span::before{
+    content: 'ㅣ';
+    position: absolute;
+    left: 6px;
+    top: -4px;
+}
+.f_img .ins{
+    position: absolute;
+    right: 80px;
+    top: 13px;
+    width: 50px;
+    height: 50px;
+    background: url(../img/icon_sns_instar.png) no-repeat 0 0;
+}
+.f_img .ins:hover{
+    background: url(../img/icon_sns_instar.png) no-repeat -50px 0;
+}
+.f_img .fac{
+    position: absolute;
+    right: 20px;
+    top: 13px;
+    width: 50px;
+    height: 50px;
+    background: url(../img/icon_sns_facebook.png) no-repeat 0 0;
+}
+.f_img .fac:hover{
+    background: url(../img/icon_sns_facebook.png) no-repeat -50px 0;
+
+}

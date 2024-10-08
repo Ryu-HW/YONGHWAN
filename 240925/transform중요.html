@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        h1{
+            width: 400px; height: 70px;
+            margin-bottom: 20px;
+            border: 3px solid #ccc;
+            background-color: brown;
+        }
+        p{
+            font-size: 30px;
+            padding-bottom: 30px;
+            cursor: pointer;
+            /* 가짜 손가락 */
+        }
+        .tra{
+            background-color: #ae5329;
+            transform: translate(-400px,0);
+            transition: all 0.5s;
+        }
+        .btn1:hover+.tra{
+            transform: translate(0,0);
+            /* 이동임 */
+        }
+        .rot1{
+            margin: 200px 0;
+            transform: rotate(0deg);
+            transition: all 0.5s;
+        }
+        .btn2:hover +.rot1{
+            /* 바로 다음에 있는 한 놈. */
+            transform: rotate(360deg);
+        }
+        .btn3:hover +.rot1{
+            /* 바로 다음에 있는 한 놈. */
+            transform: rotateY(180deg);
+        }
+        .btn4:hover +.rot1{
+            /* 바로 다음에 있는 한 놈. */
+            transform: rotateX(180deg);
+        }
+        .scale{
+            margin: 50px 0;
+            transform: scale(1);
+            /* 원래크기 */
+            transition: all .5s;
+        }
+        .btn5:hover+.scale{
+            transform: scale(1.3);
+        }
+        .ske{
+            margin: 50px 0;
+            transform: skewX(0deg);
+            transition: all 0.5;
+        }
+        .btn6:hover+.ske{
+            transform: skewX(45deg);
+            /* 기울임 */
+        }
+        .ske2{
+            margin: 50px 0;
+            transform: skewY(0deg);
+            transition: all 0.5;
+        }
+        .btn7:hover+.ske2{
+            transform: skewY(45deg);
+            /* 해봐야 암 */
+        }
+    </style>
+</head>
+<body>
+    <h1>원래박스</h1>
+    <p class="btn1">나와라</p>
+    <h1 class="tra">나왔다왜!!</h1>
+    <p class="btn2">나와라</p>
+    <h1 class="rot1">나왔다왜!!</h1>
+    <p class="btn3">나와라</p>
+    <h1 class="rot1">y축 기준으로 돌게</h1>
+    <p class="btn4">나와라</p>
+    <h1 class="rot1">x축 기준으로 돌게</h1>
+    <p class="btn5">커저라</p>
+    <h1 class="scale">나는야 앤트맨</h1>
+    <p class="btn6">찌그러져라</p>
+    <h1 class="ske"><span>찌그러졌죠,x축으로</span></h1>
+    <p class="btn7">찌그러져라</p>
+    <h1 class="ske2"><span>찌그러졌죠,y축으로</span></h1>
+
+</body>
+</html>

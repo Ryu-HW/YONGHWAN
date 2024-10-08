@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.box{
+    width:200px;
+    height:150px;
+    border: 1px solid #333;
+    background-image: url(images/p1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50% 50%;
+    transition: all .2s;
+    /* 변환시간 모두 0.3초 */
+}
+.box:hover{
+    /* 박스에 호버했을 경우를 나타내는 듯 */
+    background-size: 700%;
+    background-position: 60% 40%;
+    /* 확대의 느낌이 남 */
+    /* 포지션 안해주면 좌측 상단으로 늘어남 */
+}
+</style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>

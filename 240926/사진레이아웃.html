@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+*{margin: 0;padding: 0;}
+.cf:after{
+  /* 클리어 픽스 */
+  content: "";
+  clear: both;
+  display: block;
+}
+/* 이렇게 코딩하고 높이가 필요한 부분에 class="cf"라고 넣으면 됨 */
+
+.bigbox{
+  width:1000px;
+  border:5px solid tan;
+  margin: 0 auto; 
+  padding-bottom: 30px;
+}
+.bigbox h2{
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.bigbox .box{
+  float:left;
+  border: 5px solid lime;
+  margin-left: 32px;
+  margin-top: 30px;
+  width:200px;
+  height:150px;
+}
+
+.bigbox .box img{
+  display:block;
+  width:100%;
+}
+
+.Abigbox{
+    width:1000px;
+    border:5px solid tan;
+    margin: 0 auto; 
+    padding-bottom: 30px;
+  }
+  .Abigbox h2{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .Abigbox .Abox{
+    float:left;
+    border: 5px solid lime;
+    margin-left: 32px;
+    margin-top: 30px;
+    width:200px;
+    height:150px;
+  }
+  
+  .Abigbox .Abox img{
+    display:block;
+    width:100%;
+  }
+
+  .Abox1{overflow: hidden;}
+  .Abox1 img{
+    transform: scale(1);
+    transition:all 0.3s;
+  }
+
+ .Abox1:hover img{ 
+    transform: scale(1.3, 3);
+    /* 가로 세로 */
+
+  }
+
+
+</style>
+
+
+
+</head>
+<body>
+    <div class="bigbox cf">
+        <h2>Best Item</h2>
+        <div class="box box1">
+          <img src="img/women1.jpg" alt="sun1" />
+        </div>
+        <div class="box box2">
+            <img src="img/women2.jpg" alt="sun2" />
+        </div>
+        <div class="box box3">
+            <img src="img/women3.jpg" alt="sun3" />
+        </div>
+        <div class="box box4">
+            <img src="img/women4.jpg" alt="sun4" />
+        </div>
+    </div>
+
+    <div class="Abigbox cf">
+        <h2>Best Item</h2>
+        <div class="Abox Abox1">
+          <img src="img/women1.jpg" alt="sun1" />
+        </div>
+        <div class="Abox Abox2">
+            <img src="img/women2.jpg" alt="sun2" />
+        </div>
+        <div class="Abox Abox3">
+            <img src="img/women3.jpg" alt="sun3" />
+        </div>
+        <div class="Abox Abox4">
+            <img src="img/women4.jpg" alt="sun4" />
+        </div>
+    </div>
+</body>
+</html>

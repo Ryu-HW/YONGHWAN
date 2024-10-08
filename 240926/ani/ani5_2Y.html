@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+#myball{
+    position: relative;
+    left:200px;
+    top:700px;
+    width: 200px;
+    height: 200px;
+	background:url(./img/bg-main1.png) no-repeat 50% 50%;
+    animation:myani 3s forwards;
+    /* forwards 도착지점에서 끝냄 */
+}
+
+@keyframes myani{
+    0%{top:700px;}
+    100%{top:100px;}
+}
+#myball2{
+    position: relative;
+    left:500px;
+    top:1000px;
+    width: 200px;
+    height: 200px;
+	background:url(./img/bg-main1.png) no-repeat 50% 50%;
+    animation:myani2 3s forwards;
+    /* 앞의 3s는 실행시간 뒤 3s는 딜레이시간 */
+}
+
+@keyframes myani2{
+    0%{top:1000px;}
+    100%{top:400px;}
+}
+</style>
+</head>
+<body>
+    <div id="myball"></div>
+    <div id="myball2"></div>
+</body>
+</html>

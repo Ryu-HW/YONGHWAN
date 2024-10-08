@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>static,relative</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background-color: aqua;
+            float: left;
+        }
+        .box2{
+            background-color: rgb(45, 45, 155);
+            float: left;
+        }
+        .box4{
+            background-color: rgb(45, 155, 50);
+            position: relative;
+        }
+        .box3{
+            clear: both;
+            background-color: rgb(155, 45, 146);
+            position: relative;
+            top: 50px;
+            left: 50px;
+            z-index: -1;
+            /* 누가 위로 올라오게 할 것인가 */
+
+        }
+        /* relative는 해당 위치에서 층을 만들어 이동하는 개념인듯? 기존 위치는 그대로 비워둠 */
+        /* top과 left 등등 으로 이동 가능 */
+        /* absolute와 연계해서 쓴다(부모역할을 함) */
+        /* 기준 원래의 자기 자리부터 시작 */
+
+    </style>
+
+</head>
+<body>
+    <div class="box box1">박스1</div>
+    <div class="box box2">박스2</div>
+    <div class="box box3">박스3</div>
+    <div class="box box4">박스4</div>
+</body>
+</html>

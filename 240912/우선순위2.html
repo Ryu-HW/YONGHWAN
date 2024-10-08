@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style> 
+    #purple{color:purple;}
+    div.red{color:red;}
+    h1{color:blue !important;}
+    /* 별멍이 우선, ID가 우선 */
+    /* important는 최우선 */
+</style>
+</head>
+<body>
+    <div>
+        <h1 class="red" id="purple" style="color: chartreuse;">나는 빨간색</h1>
+        <!-- id는 한 놈한테밖에 못 주고 굉장히 까다로움, 아이디는 중복도 안 됨 -->
+    </div>
+</body>
+</html>
+<!-- 선택자 우선순위
+1. !important
+2. 개인지정스타일
+3. id선택자
+4. class선택자
+5. 태그 선택자
+-->

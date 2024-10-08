@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            list-style: none;
+        }
+        .container1 li{
+            margin: 5px;
+        }
+        .container2 li{
+            margin: 5px;
+        }
+        p.title{
+            margin: 25px 0;
+            font-weight: bold;
+        }
+        ul li{
+            margin: 5px;
+            list-style: none;
+        }
+        .head{
+            width: 542px;
+            margin: 0   auto;
+            border: 1px solid #111;
+        }
+        .rbut{
+            margin: 0 10px;
+        }
+        form{
+            width: 500px;
+            margin: 20px;
+            background-color: rgb(240, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <form action="">
+            <div class="head1">
+                <h1>프런트엔드 개발자 지원서</h1>
+                <p>HTML, CSS, javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.</p>
+            </div>
+            <hr/>
+            <div class="container1">
+                <p class="title">개인 정보</p>
+                    <ul>
+                        <li>
+                            <label class="text" for="name">이름</label>
+                            <input type="text" id="name" placeholder="공백없이 입력하세요.">
+                        </li>
+                        <li>
+                            <label class="text" for="pn">연락처</label>
+                            <input type="tel" id="pn">
+                        </li>
+                    </ul>
+            </div>
+            <div class="container2">
+                <p class="title">지원 분야</p>
+                <ul>
+                    <li>
+                        <label class="sup"><input type="radio" name="subj" class="rbut">웹 퍼블리싱</label>
+                    </li>
+                    <li>
+                        <label class="sup"><input type="radio" name="subj" class="rbut">웹 애플리케이션 개발</label>
+                    </li>
+                    <li>
+                        <label class="sup"><input type="radio" name="subj" class="rbut">개발 환경 개선</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="container3">
+                <p class="title">지원 동기</p>
+                <li>
+                    <label class="memo" for="memo"></label>
+                    <textarea name="memo" id="memo" cols="55" rows="5" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea>
+                </li>
+                <input type="submit" value="접수하기">
+                <input type="reset" value="다시 쓰기">
+            </div>
+        </form>
+        
+</body>
+</html>

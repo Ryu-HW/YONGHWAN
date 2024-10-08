@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>    
+    .wrap{
+        width: 830px;
+        height: 310px;
+        position: relative;
+        margin: 50px auto;
+    }
+    .box{
+        position: absolute;
+        overflow: hidden;
+    }
+    .box1{
+        left: 0;
+        top: 0;
+    }
+    .box1::after{
+        content: '';
+        position: absolute;
+        background-color: rgba(0, 0, 255, 0.7);
+        width: 100%;
+        height: 150px;
+        left: -200px;
+        top: 0;
+        transition: all 0.1s;
+        background: url(img/hite/more.png) no-repeat 50% 80%;
+    }
+    .box1:hover:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        left: 0;
+        top: 0;
+    }
+
+    .box2{
+        left: 0;
+        top: 160px;
+    }
+    .box2::after{
+        content: '';
+        position: absolute;
+        background-color: rgba(0, 0, 255, 0.7);
+        width: 100%;
+        height: 150px;
+        left: -200px;
+        top: 0;
+        transition: all 0.1s;
+    }
+    .box2:hover:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        left: 0;
+        top: 0;
+    }
+    .box3{
+        left: 210px;
+        top:0;
+    }
+    .box3::after{
+        content: '';
+        position: absolute;
+        background-color: rgba(0, 0, 255, 0.7);
+        width: 100%;
+        height: 310px;
+        left: -200px;
+        top: 0;
+        transition: all 0.1s;
+    }
+    .box3:hover:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 310px;
+        left: 0;
+        top: 0;
+    }
+    .box4{
+        right: 210px;
+        top: 0;
+    }
+    .box4::after{
+        content: '';
+        position: absolute;
+        background-color: rgba(0, 0, 255, 0.7);
+        width: 100%;
+        height: 150px;
+        left: -200px;
+        top: 0;
+        transition: all 0.1s;
+    }
+    .box4:hover:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        left: 0;
+        top: 0;
+    }
+    .box5{
+        right: 0;
+        top: 0;
+    }
+    .box5::after{
+        content: '';
+        position: absolute;
+        background-color: rgba(0, 0, 255, 0.7);
+        width: 100%;
+        height: 150px;
+        left: -200px;
+        top: 0;
+        transition: all 0.1s;
+    }
+    .box5:hover:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        left: 0;
+        top: 0;
+    }
+    .box6{
+        right: 0;
+        top: 160px;
+    }
+    .box6::after{
+        content: '';
+        position: absolute;
+        background-color: rgba(0, 0, 255, 0.7);
+        width: 100%;
+        height: 150px;
+        left: 0;
+        top: -150px;
+        transition: all 0.1s;
+    }
+    .box6:hover:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        left: 0;
+        top: 0;
+    }
+    .box p{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        padding-top: 30px;
+        color: #fff;
+        box-sizing: border-box;
+        /* 보더랑 패팅 포함 100%로. */
+        text-align: center;
+        transition: all 0.4s;
+        opacity: 0;
+        /* 투명도 */
+        background: url(img/more.png) no-repeat 50% 80%;
+    }
+    .box:hover p{opacity: 1;}
+    </style>
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="box box1">
+          <img src="img/women1.jpg" alt="w1" />
+          <p>국내 유일청정 대나무<br>참이슬fresh</p>
+        </div>
+        <div class="box box2">
+          <img src="img/women2.jpg" alt="w2" />
+        </div>
+        <div class="box box3">
+          <img src="img/aaa1.jpg" alt="aaa1" />
+        </div>
+        <div class="box box4">
+          <img src="img/women3.jpg" alt="w3" />
+        </div>
+        <div class="box box5">
+          <img src="img/women4.jpg" alt="w3" />
+        </div>
+        <div class="box box6">
+          <img src="img/bbb1.jpg" alt="w3" />
+        </div>
+        
+     
+      </div>
+</body>
+</html>

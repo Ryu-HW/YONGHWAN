@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>static,relative</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background-color: aqua;
+            position: absolute;
+            bottom: 50px;
+            right: 150px;
+            /* 바텀으로부터 50px */
+            /* 오른쪽으로부터 150px 로 계산됨 */
+            /* 부모에 relative 를 주어 기준점 변경 가능 */
+        }
+        .box2{
+            background-color: rgb(45, 45, 155);
+        }
+        .box3{
+            background-color: rgb(155, 45, 146);
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        /* absolute는 절대적인 브라우저의 위치로부터의 설정임 */
+        /* 자리뺏김 자리가 없어진다고 하는게 맞을듯 */
+        /* 포지션은 마지막에 쓴 사람이 제일 위에있는 듯 */
+        .box4{
+            background-color: rgb(45, 155, 50);
+            position: fixed;
+            /* 스크롤을 따라옴 화면에 고정됨*/
+            top: 50px;
+            left: 300px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box box1">박스1</div>
+    <div class="box box2">박스2</div>
+    <div class="box box3">박스3</div>
+    <div class="box box4">박스4</div>
+</body>
+</html>
