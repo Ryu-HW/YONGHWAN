@@ -1,0 +1,390 @@
+*{
+    margin: 0; padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: #333;
+}
+
+@media screen and (min-width:1600px) {
+
+    #wrap{
+        width: 100%;
+    }
+    #section2{
+        height: 900px;
+        margin: 0 100px;
+        padding: 100px 0;
+    }
+    h1{
+        width: 100%;
+        height: 100px;
+    }
+    h1 a{
+        float: right;
+    }
+    #section2 ul li{
+        display: block;
+        float: left;
+        width: 62px;
+        height: 30px;
+    }
+    .nav1{
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid #aaa;
+    }
+    .slide{
+        width: 100%;
+        height: 600px;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        position: relative;
+    }
+    .slide .L_btn{
+        width: 56px;
+        height: 56px;
+        border: 1px solid #aaa;
+        border-radius: 50%;
+        position: absolute;
+        top: 200px;
+        left: -10px;
+        background: url(../img/ic_prev.png) no-repeat 16px 16px;
+        background-color: #fff;
+
+    }
+    .slide .R_btn{
+        width: 56px;
+        height: 56px;
+        border: 1px solid #aaa;
+        border-radius: 50%;
+        position: absolute;
+        top: 200px;
+        right: -10px;
+        background: url(../img/ic_next.png) no-repeat 16px 16px;
+        background-color: #fff;
+    }
+    .slide .box{
+        width: 25%;
+        height: 650px;
+        padding: 20px 20px 0;
+        border-right: 1px solid #aaa;
+        
+    }
+    .slide .box4{
+        border-right: 0px solid #aaa;
+    }
+    .slide .box img{
+        width: 100%;
+        border-radius: 20px;
+    }
+    .slide .box a{
+        border-radius: 20px;
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    .slide .box img:hover{
+        transition: all 0.5s;
+        transform: scale(1.1);
+    }
+    .txt{
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 48px;
+    }
+    .txt h4{
+        display: block;
+        width: 54px;
+        height: 28px;
+        border-radius: 14px;
+        background-color: #fb9622;
+        color: #fff;
+        line-height: 28px;
+        font-size: 13px;
+        text-align: center;
+    }
+    .txt h3{
+        font-size: 21px;
+        font-weight: bold;
+        margin: 16px 0;
+    }
+    .txt p{
+        height: 46px;
+    }
+    .btn p{
+        float: left;
+        display: block;
+        width: 100px;
+        height: 42px;
+        border: 1px solid #333;
+        color: #333;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 42px;
+        margin-right: 5px;
+    }
+
+
+}
+
+
+@media screen and (max-width:1599px) and (min-width: 1024px) {
+
+    #wrap{
+        width: 100%;
+    }
+    #section2{
+        height: 900px;
+        margin: 0 100px;
+        padding: 100px 0;
+    }
+    h1{
+        width: 100%;
+        height: 100px;
+    }
+    h1 a{
+        float: right;
+    }
+    #section2 ul li{
+        display: block;
+        float: left;
+        width: 62px;
+        height: 30px;
+    }
+    .nav1{
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid #aaa;
+    }
+    .slide{
+        width: 100%;
+        height: 600px;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        position: relative;
+    }
+    .slide .L_btn{
+        width: 56px;
+        height: 56px;
+        border: 1px solid #aaa;
+        border-radius: 50%;
+        position: absolute;
+        top: 200px;
+        left: -10px;
+        background: url(../img/ic_prev.png) no-repeat 16px 16px;
+        background-color: #fff;
+
+    }
+    .slide .R_btn{
+        width: 56px;
+        height: 56px;
+        border: 1px solid #aaa;
+        border-radius: 50%;
+        position: absolute;
+        top: 200px;
+        right: -10px;
+        background: url(../img/ic_next.png) no-repeat 16px 16px;
+        background-color: #fff;
+    }
+    .slide .box{
+        width: 33%;
+        height: 650px;
+        padding: 20px 20px 0;
+        overflow: hidden;
+
+    }
+    .slide .box4{
+        display: none;
+    }
+    
+    .slide .box img{
+        width: 100%;
+        border-radius: 20px;
+    }
+    .slide .box a{
+        border-radius: 20px;
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    .slide .box img:hover{
+        transition: all 0.5s;
+        transform: scale(1.3);
+    }
+    .txt{
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 48px;
+    }
+    .txt h4{
+        display: block;
+        width: 54px;
+        height: 28px;
+        border-radius: 14px;
+        background-color: #fb9622;
+        color: #fff;
+        line-height: 28px;
+        font-size: 13px;
+        text-align: center;
+    }
+    .txt h3{
+        font-size: 21px;
+        font-weight: bold;
+        margin: 16px 0;
+    }
+    .txt p{
+        height: 46px;
+    }
+    .btn p{
+        float: left;
+        display: block;
+        width: 100px;
+        height: 42px;
+        border: 1px solid #333;
+        color: #333;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 42px;
+        margin-right: 5px;
+    }
+
+
+}
+
+@media screen and (max-width: 1023px) {
+
+    #wrap{
+        width: 100%;
+    }
+    #section2{
+        height: 900px;
+        margin: 0 50px;
+        padding: 50px 0;
+    }
+    h1{
+        width: 100%;
+        height: 100px;
+    }
+    h1 a{
+        float: right;
+    }
+    #section2 ul li{
+        display: block;
+        float: left;
+        width: 62px;
+        height: 30px;
+    }
+    .nav1{
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid #aaa;
+    }
+    .slide{
+        width: 100%;
+        height: 600px;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        position: relative;
+    }
+    .slide .box img:hover{
+        transition: all 0.5s;
+        transform: scale(1.3);
+    }
+    .slide .L_btn{
+        width: 40px;
+        height: 40px;
+        border: 1px solid #aaa;
+        border-radius: 50%;
+        position: absolute;
+        top: 200px;
+        left: -10px;
+        background: url(../img/ic_prev.png) no-repeat 9px;
+        background-color: #fff;
+
+    }
+    .slide .R_btn{
+        width: 40px;
+        height: 40px;
+        border: 1px solid #aaa;
+        border-radius: 50%;
+        position: absolute;
+        top: 200px;
+        right: -10px;
+        background: url(../img/ic_next.png) no-repeat 9px;
+        background-color: #fff;
+    }
+    .slide .box{
+        width: 50%;
+        height: 650px;
+        padding: 20px 20px 0;
+        overflow: hidden;
+    }
+    .slide .box4{
+        display: none;
+    }
+    .slide .box3{
+        display: none;
+    }
+    
+    .slide .box img{
+        width: 100%;
+        border-radius: 20px;
+    }
+    .slide .box a{
+        border-radius: 20px;
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    .txt{
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 48px;
+    }
+    .txt h4{
+        display: block;
+        width: 54px;
+        height: 28px;
+        border-radius: 14px;
+        background-color: #fb9622;
+        color: #fff;
+        line-height: 28px;
+        font-size: 13px;
+        text-align: center;
+    }
+    .txt h3{
+        font-size: 21px;
+        font-weight: bold;
+        margin: 16px 0;
+    }
+    .txt p{
+        height: 46px;
+    }
+    .btn p{
+        float: left;
+        display: block;
+        width: 100px;
+        height: 30px;
+        border: 1px solid #333;
+        color: #333;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 30px;
+        margin-right: 5px;
+        font-size: 12px;
+    }
+
+
+
+
+
+
+
+
+}

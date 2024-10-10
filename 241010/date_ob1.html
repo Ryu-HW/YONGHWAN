@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+    <script>
+        var today = new Date();
+        var nowYear = today.getFullYear();
+        var nowMonth = today.getMonth() + 1 ; //1월 = 0으로 표시
+        var nowDate = today.getDate();
+        var yoil = today.getDay(); //숫자가 아니라 문자로 받는듯? 1,2,3
+        switch(yoil){
+            case 0 : yoil = "일";
+            break;
+            case 1 : yoil = "월";
+            break;
+            case 2 : yoil = "화";
+            break;
+            case 3 : yoil = "수";
+            break;
+            case 4 : yoil = "목";
+            break;
+            case 5 : yoil = "금";
+            break;
+            case 6 : yoil = "토";
+            break;
+            default: yoil = "?";
+        }
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        // document.write(today+" ");
+        document.write(nowYear+"년 ");
+        document.write(nowMonth+"월 ");
+        document.write(nowDate+"일 ");
+        document.write(yoil+"요일 "); //시간?
+        document.write(h+"시 "); //시간?
+        document.write(m+"분 "); //시간?
+        document.write(s+"초"+"<br>"); //시간?
+
+        document.write(`${nowYear}년 ${nowMonth}월 ${nowDate}일 `) //변수를 중괄호로 감싸고 뒤에 글.
+        document.getElementById("year").innerHTML = nowYear;
+    </script>
+</head>
+<body>
+    <h1>
+        <span id="year">0000</span>년
+        <span id="year">00</span>월
+        <span id="year">00</span>일
+        <span id="year">0</span>요일
+        <span id="year">00</span>시
+        <span id="year">00</span>분
+        <span id="year">00</span>초
+    </h1>
+</body>
+</html>

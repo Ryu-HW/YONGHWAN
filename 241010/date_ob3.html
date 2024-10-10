@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    <h1>
+        <span id="year">0000</span>년
+        <span class="month">00</span>월
+        <span id="date">00</span>일
+        <span id="day">0</span>요일
+        <span id="h">00</span>시
+        <span id="m">00</span>분
+        <span id="s">00</span>초
+    </h1>
+    
+    <script>
+
+
+        var auto1 = setInterval(auto_time,1000);
+
+        function auto_time(){
+            var today = new Date();
+            var nowYear = today.getFullYear();
+            var nowMonth = today.getMonth() + 1 ; //1월 = 0으로 표시
+            var nowDate = today.getDate();
+            var yoil = today.getDay(); //숫자가 아니라 문자로 받는듯? 1,2,3
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            switch(yoil){
+                case 0 : yoil = "일";
+                break;
+                case 1 : yoil = "월";
+                break;
+                case 2 : yoil = "화";
+                break;
+                case 3 : yoil = "수";
+                break;
+                case 4 : yoil = "목";
+                break;
+                case 5 : yoil = "금";
+                break;
+                case 6 : yoil = "토";
+                break;
+                default: yoil = "?";
+            }
+            document.getElementById("year").innerHTML = nowYear; // html 문서(innerHTML)에서 ID가 year인 것을 nowYear로 바꿈
+
+            document.querySelector('.month').innerHTML = nowMonth // 쿼리셀렉터 = id선택자나 class선택자 둘 다 해당 기호를 써서 사용 가능
+            document.querySelector('#date').innerHTML = nowDate
+            document.querySelector('#day').innerHTML = yoil
+            document.querySelector('#h').innerHTML = h
+            document.querySelector('#m').innerHTML = m
+            document.querySelector('#s').innerHTML = s
+        }   
+    </script>
+</body>
+
+</html>

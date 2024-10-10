@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+    <script>
+        t = "<table border = 1><";
+        for(r = 2;r <= 9; r++){
+            t = t + "<tr>";
+            for(c = 1; c <= 9; c++){
+                t += "<td>"+ r + "x" + c + "=" +(r*c) +"</td>";
+            }
+            t = t + "</tr>";
+        }
+        console.log(t); // ?? 
+        document.write(t);
+    </script>
+</head>
+<body>
+</body>
+</html>
