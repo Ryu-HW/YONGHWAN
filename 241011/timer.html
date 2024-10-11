@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        window.onLoad = function(){ //html 과 css다 읽고 실행
+
+            function auto_time(){
+                var today = new Date();
+                var y = today.getFullYear();
+                var m = today.getMonth()+1;
+                var d = today.getDate();
+                var n = today.getDay();
+                var yoil;
+                if(n == '0'){
+                    yoil = '일'
+                }else if(n == '1'){
+                    yoil = '월'
+                }else if(n == '2'){
+                    yoil = '화'
+                }else if(n == '3'){
+                    yoil = '수'
+                }else if(n == '4'){
+                    yoil = '목'
+                }else if(n == '5'){
+                    yoil = '금'
+                }else if(n == '6'){
+                    yoil = '토'
+                }
+                var h = today.getHours();
+                var mi = today.getMinutes();
+                var s = today.getSeconds();
+                document.getElementById("year").innerHTML = y; //id를 받는 것.
+                document.querySelector('.month').innerHTML = m; //id랑class를 선택해서 받음.
+                document.querySelector('#date').innerHTML = d;
+                document.querySelector('#day').innerHTML = yoil;
+                document.querySelector('#h').innerHTML = h;
+                document.querySelector('#m').innerHTML = mi;
+                document.querySelector('#s').innerHTML = s;
+            }
+        
+            var int_auto = setInterval(auto_time,1000);
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>
+        <span id="year">0000</span>년
+        <span class="month">00</span>월
+        <span id="date">00</span>일
+        <span id="day">0</span>요일
+        <span id="h">00</span>시
+        <span id="m">00</span>분
+        <span id="s">00</span>초
+    </h1>
+</body>
+
+
+</html>

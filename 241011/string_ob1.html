@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>105pg</title>
+<script>
+var t = "Hello Thank you good luck to you";
+	document.write(t.charAt(16), "<br>");
+	document.write(t.indexOf("you"), "<br>");
+	document.write(t.indexOf("you", 16), "<br>");
+	document.write(t.lastIndexOf("you"), "<br>");
+	document.write(t.lastIndexOf("you", 25), "<br>");
+	document.write(t.match("luck"), "<br>");
+	document.write(t.search("you"), "<br>");
+	document.write(t.substr(21, 4), "<br>");
+	document.write(t.substring(6, 12), "<br>");
+	document.write(t.replace("you","me"), "<br>");
+	document.write(t.toLowerCase(), "<br>");
+	document.write(t.toUpperCase(), "<br>");
+	document.write(t.length, "<br>");
+    // 개수를 구하는 것. 총레터의 개수가 몇 개인가(띄어쓰기 포함)
+
+    var s = t.split(" ");
+	document.write(s[0], "<br>");
+	document.write(s[4], "<br>");
+
+	var str = "A";
+	var t = str.charCodeAt(0);
+	document.write(t, "<br>");
+	document.write(String.fromCharCode(65), "<br>");
+    //아스키코드*(검색참조) 라는 것의 65번째에 해당하는 문자로 변환, 나타내는 코드. -> A
+</script>
+
+
+</head>
+<body>
+    
+</body>
+</html>
