@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+   var greenArr = ["교대", "방배", "강남"];
+	var yellowArr = ["미금","정자","수서"];
+
+	greenArr.splice(2, 1, "서초", "역삼");
+	//2부터 1개를 삭제하고 서초 강남을 넣어라 (2번포함)
+	console.log(greenArr);
+
+	var data1 = yellowArr.pop( ); // 마지막 데이터를 꺼낸다 팝 '수서'
+	var data2 = yellowArr.shift( ); //가장 앞쪽의 데이터를 꺼낸다. '미금'
+	console.log(yellowArr); // 두 개 꺼내서 '정자'만 남음
+
+
+	yellowArr.push(data2); // 맨 뒤로 밀어넣음 '미금'을.
+	console.log(yellowArr);
+
+	yellowArr.unshift(data1); // 맨 앞으로 밀어넣음 '수서'를
+	console.log(yellowArr);
+</script>
+</head>
+<body>
+    
+</body>
+</html>
