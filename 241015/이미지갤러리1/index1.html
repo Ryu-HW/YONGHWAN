@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+<style>
+*{margin:0;padding:0;}
+ul,li{list-style:none;}
+body{background-color:#333;}
+img{border:0px;}
+
+#wrap{width:640px;margin:100px auto 0 auto;}
+#nav li{float:left;}
+#nav li {
+	display:block;border:2px solid #bbb;
+	margin:0 6px 10px 0;border-radius:5px;
+}
+#nav li img{width:70px;}
+#window{clear:both;}
+
+
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<ul id="nav">
+			<li class="yz"><img src="img/thumb0.jpg" dataSrc="img/lop0.jpg" class="photo"/></li>
+			<li class="yz"><img src="img/thumb1.jpg" dataSrc="img/lop1.jpg" class="photo"/></li>
+			<li class="yz"><img src="img/thumb2.jpg" dataSrc="img/lop2.jpg" class="photo"/></li>
+			<li class="yz"><img src="img/thumb3.jpg" dataSrc="img/lop3.jpg" class="photo"/></li>
+			<li class="yz"><img src="img/thumb4.jpg" dataSrc="img/lop4.jpg" class="photo"/></li>
+			<li class="yz"><img src="img/thumb5.jpg" dataSrc="img/lop5.jpg" class="photo"/></li>
+			<li class="yz"><img src="img/thumb6.jpg" dataSrc="img/lop6.jpg" class="photo"/></li>
+			<li class="yz"><img src="img/thumb7.jpg" dataSrc="img/lop7.jpg" class="photo"/></li>
+		</ul>
+		<div><img id="window" src="img/lop0.jpg"/></div>
+	</div>
+	
+	<script>
+		var win = document.querySelector('#window') 
+		var photos = document.querySelectorAll('.photo') //8ea
+		var y = document.querySelectorAll('.yz')
+		photos.forEach(function(p){
+			p.addEventListener("click",function(){
+				var x = this.getAttribute("dataSrc")
+				win.setAttribute("src",x)
+			})
+		})
+			
+
+		
+   </script>
+</body>
+</html>
