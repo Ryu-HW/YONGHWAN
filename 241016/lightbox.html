@@ -22,21 +22,21 @@
     </div>
 
     <script>
-        var pics = document.querySelectorAll('.pic')
-        var lightbox = document.querySelector('#lightbox')
-        var lightboxImg = document.querySelector('#lightboxImg')
+        var pics = document.querySelectorAll('.pic');
+        var lightbox = document.querySelector('#lightbox');
+        var lightboxImg = document.querySelector('#lightboxImg');
 
         pics.forEach(function(p){
             p.addEventListener("click",function(){
-                var bL = this.getAttribute("asd");
+                var bL = this.getAttribute("asd"); //this는 p를 나타내는 건가
                 lightboxImg.setAttribute("src",bL)
 
                 lightbox.style.display='block';
-            })
+            });
         });
         lightbox.addEventListener("click",function(){
             lightbox.style.display='none';
-        })
+        });
 
         // lightbox.onclick = function(){
         //     lightbox.style.display='none';

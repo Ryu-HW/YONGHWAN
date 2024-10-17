@@ -14,9 +14,8 @@
 <script>
     //익명함수 사용이유 -    
         //1. 일회성 함수로 사용하기
-    setTimeout(function(){
-        console.log("2초후에 내용출력");
-    },2000);
+    setTimeout( () => console.log("2초후에 내용출력"),
+    2000);
     
     document.getElementById("btn1").addEventListener("click",function(){
         alert("dasd")
