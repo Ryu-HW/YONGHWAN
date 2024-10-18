@@ -183,14 +183,19 @@
     var num = 0;
 
     pb.addEventListener('click',function(){
-        num--;
-        if(num < 0){
+        
+        if(num == 0){
             num = 3
+            slideBoxs.style.transition = 'none';
             slideBoxs.style.marginLeft = -(360*num)+'px';
         }else{
             slideBoxs.style.marginLeft = -(360*num)+'px';
         }
-
+        setTimeout(function(){
+                num --;
+                slideBoxs.style.transition = 'all 0.5s';
+                slideBoxs.style.marginLeft = -(360*num)+'px';
+        },50);
     })  
 
     nb.addEventListener('click',function(){
