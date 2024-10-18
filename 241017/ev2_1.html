@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+ body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px;
+        border: 2px solid #333;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .btn.active {
+        background-color: #333;
+        color: white;
+    }
+
+</style>
+
+</head>
+<body>
+    <div class="btn active" id = "btn1">Button1</div>
+    <div class="btn" id = "btn2">Button1</div>
+    <div class="btn" id = "btn3">Button1</div>
+<script>
+// .btn을 클릭하면 바탕색이 검정색에 글자색이 흰색이 되도록 하세요
+    let btns = document.querySelectorAll(".btn");
+
+    btns.forEach(function(x){
+
+        x.addEventListener("click",function(){
+
+            
+            if(x.className == 'active'){
+                btns.forEach(function(y){
+                    y.classList.remove('active')
+                })
+            }else{
+                btns.forEach(function(y){
+                    y.style.backgroundColor = "#f1f1f1"
+                    y.style.color = "#000"
+                })
+                x.style.backgroundColor = "#333"
+                x.style.color = "white"
+            }
+
+        })
+    })
+
+</script>
+
+</body>
+</html>

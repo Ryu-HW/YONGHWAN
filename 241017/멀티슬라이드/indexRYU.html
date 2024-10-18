@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul,li{list-style: none; text-decoration: none;}
+        .slide_wrapper{
+            position: relative;
+            width: 990px;
+            margin: 0 auto;
+            height: 300px;
+            overflow: hidden;
+            top: 50px;
+        }
+
+        .slide_wrapper .slides{
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: left 0.5s ease-out;
+        }
+
+        .slide_wrapper .slides li{
+            float: left;
+            margin-right: 30px;
+            
+        }
+        .slide0{
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .slide1{
+            display: block;
+            position: absolute;
+            left: 0px;
+            top: 0;
+        }
+        .slide2{
+            display: block;
+            position: absolute;
+            left: 330px;
+            top: 0;
+        }
+        .slide3{
+            display: block;
+            position: absolute;
+            left: 660px;
+            top: 0;
+        }
+        .slide4{
+            display: block;
+            position: absolute;
+            left: -330px;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide_wrapper">
+        <ul class="slides">
+            <li class="slide0"><img src="img/1.jpg" alt=""></li>
+            <li class="slide1"><img src="img/2.jpg" alt=""></li>
+            <li class="slide2"><img src="img/3.jpg" alt=""></li>
+            <li class="slide3"><img src="img/4.jpg" alt=""></li>
+            <li class="slide4"><img src="img/5.jpg" alt=""></li>
+            <li><img src="img/6.jpg" alt=""></li>
+            <li><img src="img/7.jpg" alt=""></li>
+            <li><img src="img/8.jpg" alt=""></li>
+            <li><img src="img/9.jpg" alt=""></li>
+        </ul>
+    </div>
+    <p class="controls">
+        <span class="prev">prev</span>
+        <span class="next">next</span>
+    </p>
+    <script>
+        var show = document.querySelectorAll('ul li')
+    </script>
+</body>
+</html>

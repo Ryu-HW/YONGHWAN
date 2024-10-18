@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function letExample(){
+            let x = 1;
+            if (true){
+                x = x + 1;
+                document.write(x,"<br>");
+            }
+            document.write(x,"<br>");
+
+        }
+        letExample();
+        //다시 정의한 경우(중요). 지역변수를 빠져나오면 다시 돌아감 왜냐? 사실상 다른놈이라고 봐야할듯? 하지만 정의하지
+        //않고 쓰면 전역변수를 가져오는 것이기 때문에 그 지역(여기선 펑션)을 빠져나와도 전역변수가 바뀌어있음.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

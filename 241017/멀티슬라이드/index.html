@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul,li{list-style: none; text-decoration: none;}
+        .slide_wrapper{
+            position: relative;
+            width: 990px;
+            margin: 0 auto;
+            height: 300px;
+            top: 50px;
+            overflow: hidden;
+        }
+
+        .slide_wrapper .slides{
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: left 0.5s ease-out;
+        }
+
+        .slide_wrapper .slides li{
+            float: left;
+            margin-right: 30px;
+        }
+        .slide_wrapper .slides li:last-child{
+            margin-right: 0;
+        }
+        .controls{
+            text-align: center;
+            margin-top: 100px;
+        }
+        .controls span{
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slide_wrapper">
+        <ul class="slides">
+            <li><img src="img/1.jpg" alt=""></li>
+            <li><img src="img/2.jpg" alt=""></li>
+            <li><img src="img/3.jpg" alt=""></li>
+            <li><img src="img/4.jpg" alt=""></li>
+            <li><img src="img/5.jpg" alt=""></li>
+            <li><img src="img/6.jpg" alt=""></li>
+            <li><img src="img/7.jpg" alt=""></li>
+            <li><img src="img/8.jpg" alt=""></li>
+            <li><img src="img/9.jpg" alt=""></li>
+        </ul>
+    </div>
+    <p class="controls">
+        <span class="prev">prev</span>
+        <span class="next">next</span>
+    </p>
+
+
+
+
+
+
+
+
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const slide = document.querySelectorAll('.slides li');
+
+        let currentIdx = 0;
+        const slideCount = slide.length;
+        const slideWidth = 300; //슬라이드 한 개 넓이 ?
+        const slideMargin = 30;
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+
+        slides.style.width = (slideWidth+slideMargin)*slideCount-slideMargin+"px";
+        
+
+        function moveSlide(num){
+            slides.style.left = -(num*330) + "px";
+            currentIdx = num;
+        }
+
+        nextBtn.addEventListener('click',function(){
+            if(currentIdx < slideCount - 3){
+                moveSlide(currentIdx + 1);          
+            }else{
+                moveSlide(0);
+            }
+            
+        })
+
+        prevBtn.addEventListener('click',function(){
+            if(currentIdx > 0){
+                moveSlide(currentIdx - 1);          
+            }else{
+                moveSlide(slideCount - 3);
+            }
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+
+
+
+    <style>
+        *{margin: 0;padding: 0;}
+        a{text-decoration: none; color: #000;}
+        ul,li{list-style: none;}
+        img{display: block;}
+
+        .tabMenu{
+            width: 400px;
+            height: 332px;
+            position: relative;
+            margin-bottom: 100px;
+        }
+        .tabBtn{
+            width: 260px;
+            height: 50px;
+            background-color: #d9d9d9;
+            border-radius: 0 5px 5px 0;
+        }
+        .tabMenuMore{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .tabBtn a{
+            text-align: center;
+            float: left;
+            display: block;
+            line-height: 50px;
+            width: 130px;
+            height: 50px;
+            background-color: #d9d9d9;
+            border-radius: 0 5px 5px 0;
+            font-weight: bold;
+
+        }
+        .tabBtn .tabActive{
+            background-color: #32557f;
+            color: #fff;
+        }
+        .tabDiv{
+            width: 400px;
+            padding: 20px;
+            height: 282px;
+            line-height: 40px;
+            box-sizing: border-box;
+            border-radius: 0 10px 10px;
+            border: 1px solid #999;
+        }
+        #tabDiv2{
+            display: none;
+        }
+        .tabDiv ul li{
+            display: block;
+            padding-bottom: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .slideBox{
+            width: 360px;
+            height: 176px;
+            position: relative;
+        }
+        .slideBox .pBtn{
+            position: absolute;
+            left: 100px;
+            bottom: 0;
+            z-index: 1;
+
+        }
+        .slideBox .nBtn{
+            position: absolute;
+            left: 200px;
+            bottom: 0;
+            z-index: 1;
+        }
+        .slideBox p{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 360px;
+            height: 20px;
+            background-color: #00000027;
+        }
+        .slides{
+            width: 2000px;
+            height: 176px;
+            border: 1px solid #000;
+            transition: all 0.2s;
+        }
+        .slides li{
+            float: left;
+        }
+        
+    </style>
+
+
+
+</head>
+
+
+<body>
+    <div class="tabMenu">
+        <div class="tabBtn">
+            <a href="#tabDiv1" class="tabActive">공지사항</a>
+            <a href="#tabDiv2">보도자료</a>
+        </div>
+        <img class="tabMenuMore" src="img/btn_more.png" alt="">
+        <div class="tabDiv" id="tabDiv1">
+            <ul>
+                <li><a href="#">2025년도 국회도서관 </a></li>
+                <li><a href="#">2025년도 국회도서관 </a></li>
+                <li><a href="#">2025년도 국회도서관 </a></li>
+                <li><a href="#">2025년도 국회도서관 </a></li>
+                <li><a href="#">2025년도 국회도서관 </a></li>
+            </ul>
+        </div>
+        <div class="tabDiv" id="tabDiv2">
+            <ul>
+                <li><a href="#">2025년도 국회도서관1 </a></li>
+                <li><a href="#">2025년도 국회도서관1 </a></li>
+                <li><a href="#">2025년도 국회도서관1 </a></li>
+                <li><a href="#">2025년도 국회도서관1 </a></li>
+                <li><a href="#">2025년도 국회도서관1 </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="slideBox"> 
+        <!-- 360, 176 -->
+        <ul class="slides">
+            <li><a href="#"><img src="img/2.png" alt=""></a></li>
+            <li><a href="#"><img src="img/3.png" alt=""></a></li>
+            <li><a href="#"><img src="img/4.png" alt=""></a></li>
+            <li><a href="#"><img src="img/5.png" alt=""></a></li>
+        </ul>
+        <p>
+            <ul>
+                <li class="pBtn"><a href="#"><img src="img/icon_left.png" alt=""></a></li>
+                <li class="nBtn"><a href="#"><img src="img/icon_right.png" alt=""></a></li>
+            </ul>
+        </p>
+    </div>
+</body>
+
+<script>
+    const tabBtns = document.querySelectorAll('.tabBtn a'); //탭 버튼
+    const divBoxs = document.querySelectorAll('.tabDiv');
+
+    tabBtns.forEach(function(visible){
+
+        visible.addEventListener('click',function(e){
+            e.preventDefault();
+            let tabDiv = visible.getAttribute('href');
+            
+            tabBtns.forEach(function(x){
+                x.classList.remove('tabActive')
+            })
+
+            divBoxs.forEach(function(box){
+                box.style.display = 'none';
+            })
+            document.querySelector(tabDiv).style.display = 'block'
+            visible.classList.add('tabActive')
+        });
+    });
+
+    var slideBoxs = document.querySelector('.slides')
+    const pb = document.querySelector('.pBtn a')
+    const nb = document.querySelector('.nBtn a')
+
+
+    var num = 0;
+
+    pb.addEventListener('click',function(){
+        num--;
+        if(num < 0){
+            num = 3
+            slideBoxs.style.marginLeft = -(360*num)+'px';
+        }else{
+            slideBoxs.style.marginLeft = -(360*num)+'px';
+        }
+
+    })  
+
+    nb.addEventListener('click',function(){
+        if(num == 3 ){
+            num = 0
+            slideBoxs.style.transition = 'none';
+            slideBoxs.style.marginLeft = -(360*num)+'px';
+
+        }else{
+            slideBoxs.style.marginLeft = -(360*num)+'px';
+        }
+        setTimeout(function(){
+                num ++;
+                slideBoxs.style.transition = 'all 0.5s';
+                slideBoxs.style.marginLeft = -(360*num)+'px';
+        },50);
+
+
+
+    })  
+
+    
+    
+
+
+
+
+
+
+    // function autoSlide(){
+    //     if(num == 4){
+    //         num = 0;
+    //     };
+    //     slideBoxs.style.marginLeft = -(360*num)+'px';
+    //     num++;
+
+    // };
+
+    // setInterval(autoSlide,1000);
+</script>
+
+</html>

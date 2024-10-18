@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function constExample(){
+            // var y = 5;
+            //  y = 10; //재할당
+            // var y = 20; //재선언 같은 놈을 바꿈
+
+
+            // let y = 5;
+            // y = 10; // 재할당은 가능
+            // let y = 20; //재선언은 안됨 왜냐, 두 개의 같은 놈이 한 곳에 있기 때문. 마치도플갱어
+            const y = 5;
+            // y = y + 5; //재할당 불가능.
+            // const y = 20; //재선언도 불가능
+            const obj = {name:"민희"};
+            obj.name = "예슬";
+            document.write(obj); // ?? 이름이 안나옴
+            // function constAble(){
+            //     y = y + 5;
+            //     document.write(y)
+            // }              이것도 안 됨!!
+            const arr = [1,2,3];
+            arr.push(4);
+            document.write(arr);
+
+            document.write(y,"<br>");
+
+        }
+        constExample();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
