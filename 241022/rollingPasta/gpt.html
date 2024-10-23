@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { padding: 0; margin: 0; }
+        ul, li { list-style: none; }
+        #wrap { width: 100%; background: url(images/intro_bg.png); height: 536px; }
+        .container { width: 1280px; height: 536px; padding: 40px 80px; margin: 0 auto; background: url(images/intro_logo.png) no-repeat 10% 50%; }
+        .mainBox { width: 850px; float: right; padding-top: 100px; text-align: center; }
+        .javaBox li { float: left; margin: 50px 0 0 60px; position: relative; }
+        .on { border: 2px solid red; background: url(images/intro_slide_ico1_on.png); } /* on 클래스에 시각적으로 확인할 수 있는 스타일 추가 */
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <div class="mainBox">
+                <div class="headBox">
+                    <h3>이탈리안 파스타의 캐주얼한 해석</h3>
+                    <p>본질만 담은 합리적인 가격으로 맛있는 파스타와 잔와인까지,<br>부담없이 즐기고 가실 수 있는 곳입니다.</p>
+                </div>
+                <ul class="javaBox">
+                    <li><img class="on" src="images/intro_slide_ico1.png" info="images/intro_slide_ico1" alt="어쩌고"></li>
+                    <li><img src="images/intro_slide_ico2.png" info="images/intro_slide_ico2" alt="어쩌고"></li>
+                    <li><img src="images/intro_slide_ico3.png" info="images/intro_slide_ico3" alt="어쩌고"></li>
+                    <li><img src="images/intro_slide_ico4.png" info="images/intro_slide_ico4" alt="어쩌고"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+    const javaBoxImg = document.querySelectorAll('.javaBox li img');
+
+    javaBoxImg.forEach(function(JBI) {
+        var infoJBI = JBI.getAttribute('info');
+
+        JBI.addEventListener('mouseover', function() {
+            JBI.setAttribute('src', infoJBI + '_on.png');
+        });
+
+        JBI.addEventListener('mouseout', function() {
+            // 클릭되지 않은 이미지일 경우에만 원래 이미지로 복원
+            if (!JBI.classList.contains('on')) {
+                JBI.setAttribute('src', infoJBI + '.png');
+            }
+        });
+
+        JBI.addEventListener('click', function(e) {
+            // 모든 이미지에서 'on' 클래스 제거 및 원래 이미지로 복원
+            javaBoxImg.forEach(function(x) {
+                x.classList.remove('on');
+                var imgInfo = x.getAttribute('info');
+                x.setAttribute('src', imgInfo + '.png'); // 원래 이미지로 복원
+            });
+
+            // 클릭한 이미지에 'on' 클래스 추가
+            e.target.classList.add('on');
+
+            // 클릭한 이미지의 info 속성에 따라 'on' 이미지의 src를 업데이트
+            var asd = e.target.getAttribute('info');
+            e.target.setAttribute('src', asd + "_on.png"); // 클릭한 이미지의 src 업데이트
+            // 이 부분에서 e.target의 src를 _on.png로 변경합니다.
+        });
+    });
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { padding: 0; margin: 0; }
+        ul, li { list-style: none; }
+        #wrap { width: 100%; background: url(images/intro_bg.png); height: 536px; }
+        .container { width: 1280px; height: 536px; padding: 40px 80px; margin: 0 auto; background: url(images/intro_logo.png) no-repeat 10% 50%; }
+        .mainBox { width: 850px; float: right; padding-top: 100px; text-align: center; }
+        .javaBox li { float: left; margin: 50px 0 0 60px; position: relative; }
+        .on { border: 2px solid red; background: url(images/intro_slide_ico1_on.png); } /* on 클래스에 시각적으로 확인할 수 있는 스타일 추가 */
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <div class="mainBox">
+                <div class="headBox">
+                    <h3>이탈리안 파스타의 캐주얼한 해석</h3>
+                    <p>본질만 담은 합리적인 가격으로 맛있는 파스타와 잔와인까지,<br>부담없이 즐기고 가실 수 있는 곳입니다.</p>
+                </div>
+                <ul class="javaBox">
+                    <li><img class="on" src="images/intro_slide_ico1.png" info="images/intro_slide_ico1" alt="어쩌고"></li>
+                    <li><img src="images/intro_slide_ico2.png" info="images/intro_slide_ico2" alt="어쩌고"></li>
+                    <li><img src="images/intro_slide_ico3.png" info="images/intro_slide_ico3" alt="어쩌고"></li>
+                    <li><img src="images/intro_slide_ico4.png" info="images/intro_slide_ico4" alt="어쩌고"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+    const javaBoxImg = document.querySelectorAll('.javaBox li img');
+    const on = document.querySelector('.on');
+
+    javaBoxImg.forEach(function(JBI) {
+        var infoJBI = JBI.getAttribute('info');
+
+        JBI.addEventListener('mouseover', function() {
+            JBI.setAttribute('src', infoJBI + '_on.png');
+        });
+
+        JBI.addEventListener('mouseout', function() {
+            // 클릭된 이미지가 아닌 경우에만 원래 이미지로 복원
+            if (!JBI.classList.contains('on')) {
+                JBI.setAttribute('src', infoJBI + '.png');
+            }
+        });
+
+        JBI.addEventListener('click', function(e) {
+            // 모든 이미지에서 'on' 클래스 제거
+            javaBoxImg.forEach(function(x) {
+                x.classList.remove('on');
+                // 클릭할 때 원래 이미지로 복원
+                var imgInfo = x.getAttribute('info');
+                x.setAttribute('src', imgInfo + '.png');
+            });
+
+            // 클릭한 이미지에 'on' 클래스 추가
+            e.target.classList.add('on');
+
+            // 클릭한 이미지의 info 속성에 따라 'on' 이미지의 src를 업데이트
+            var asd = e.target.getAttribute('info');
+            on.src = asd + "_on.png"; // 클릭한 이미지의 정보로 업데이트
+        });
+    });
+</script>
+</html> -->

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        ul,li{list-style: none;}
+        .cont{
+            width: 100%;
+            height: 70px;
+            background-color: #00000013;
+            background: url(images/bgBodyTop.htm) center bottom;
+
+        }
+        a{text-decoration: none; color: #000;}
+        ul{
+            width: 1200px;
+            height: 70px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 5%;
+            background: url(images/logo.htm) no-repeat;
+        }
+        li{
+            width: 200px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <ul>
+            <li><a href = "#" info = "새우깡 1번">손이가요 새우깡</a></li>
+            <li><a href = "#" info = "새우깡 2번">어른손 아이손</a></li>
+            <li><a href = "#" info = "새우깡 3번">언제든지 새우깡</a></li>
+            <li><a href = "#" info = "새우깡 4번">누구든지 즐겨요</a></li>
+
+        </ul>
+    </div>
+
+</body>
+<script>
+    const a = document.querySelectorAll('.cont ul li a')
+
+    a.forEach(function(x){
+        var y = x.getAttribute('info')
+        var z = x.textContent
+        x.addEventListener('mouseover',function(){
+            x.textContent = y
+        })
+        x.addEventListener('mouseout',function(){
+            x.textContent = z
+        })
+
+    })
+
+
+</script>
+</html>
