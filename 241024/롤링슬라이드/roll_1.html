@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+<style>
+*{margin: 0;padding:0 ;}
+ul{list-style: none;}
+li{float: left;width:80px;}
+/* 사진한장의 크기는 72 인데 magin 8까지 합쳐서 li 넓이 80px */
+h1{text-align: center;}
+#banner_wrap{
+    width: 260px;
+    padding: 10px 20px;
+    margin: 0 auto;
+    border: 1px solid #aaa;
+    /* 전체넓이는 300(패딩포함 ) */
+}
+
+#frame{
+    width: 232px;
+    height: 54px;
+    position: relative;
+    margin: 10px auto;
+    /* border: 1px solid blue; */
+    overflow: hidden;
+}
+
+/* ul */
+#banner{ 
+    width:800px;
+    /* border:1px solid red; */
+    height: 54px;
+    /* transition: all 0.5s; */
+}
+
+
+
+
+</style>
+
+
+</head>
+<body>.
+    <h1>롤링 슬라이드 배너 만들기</h1>
+    <div id="banner_wrap">
+        <div id="frame">
+            <ul id="banner">
+                <li><a href="#"><img src="images/pic_t1.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/pic_t2.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/pic_t3.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/pic_t4.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/pic_t5.jpg" alt=""></a></li>
+               
+            </ul>
+        </div>
+        <p>
+            <a href="#" class="prev">
+                <img src="images/prev_btn.png" alt="이전 버튼">
+            </a>
+            <a href="#" class="next">
+                <img src="images/next_btn.png" alt="다음 버튼">
+            </a>
+        </p>
+    </div>
+
+    <script>
+        $(function(){
+            var bannerIndex = 0;
+            var liWidth = 80;
+            var slideClones = $('#banner li:lt(3)').clone()
+            //#banner li 중에 인덱스번호가 3보다(lt, less then) 작은 애들 모두. 복사한다.
+            $('#banner').append(slideClones);
+            //#banner 맨 뒤에 slideClones를 append (slideClones를 맨~뒤로 붙여넣는다)
+
+
+
+
+            $('.next').click(function(){
+
+                if(bannerIndex == 5){
+                    bannerIndex = 0;
+                    $('#banner').css('margin-left','0');
+                }
+                bannerIndex++;
+                $('#banner').stop().animate({'margin-left':-liWidth*bannerIndex},300); //stop()은 왜 있는 걸까?
+                
+
+                return false;
+
+            });
+            $('.prev').click(function(){
+                if(bannerIndex == 0){
+                    bannerIndex = 5;
+                    $('#banner').css('margin-left',-liWidth*bannerIndex);
+                }
+                bannerIndex--;
+                $('#banner').stop().animate({'margin-left':-liWidth*bannerIndex},300); //stop()은 왜 있는 걸까?
+                
+
+                return false;
+            });
+
+
+            function autoplay(){
+                if(bannerIndex == 5){
+                    bannerIndex = 0;
+                    $('#banner').css('margin-left','0');
+                }
+                bannerIndex++;
+                $('#banner').stop().animate({'margin-left':-liWidth*bannerIndex},300); //stop()은 왜 있는 걸까?
+                
+
+                return false;
+            }
+
+            setInterval(autoplay, 2000);
+            //함수 괄호를 빼야함
+
+        })
+
+
+    </script>
+</body>
+</html>

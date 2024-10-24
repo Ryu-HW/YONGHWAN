@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+
+
+        $(function(){
+            $('.slideBox ul a').click(function(){
+
+                var liWidth = $(this).next('li').css('width')
+                if(liWidth == '0px'){
+                    $('.slideBox ul a').next('li').css('width','0px')
+                    $(this).next('li').css('width','320px')
+                    $('.slideBox ul a').children('img').attr('src','blue01.png');
+                    $(this).children('img').attr('src','orange01.png');
+                }else{
+                    $('.slideBox ul a').next('li').css('width','0px')
+                    $('.slideBox ul a').children('img').attr('src','blue01.png');
+                }
+
+            })
+            $('.slideBox ul a').hover(function(){
+                var liWidth = $(this).next('li').css('width')
+                if(liWidth == '0px'){
+                    $(this).children('img').attr('src','pink01.png');
+                }
+                },function(){
+                var liWidth = $(this).next('li').css('width')
+                if(liWidth == '0px'){
+                    $(this).children('img').attr('src','blue01.png');
+                }
+            })
+        })
+
+    </script>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul,li{list-style: none;}
+        body{
+            background-color: #000000;
+        }
+        img{display: block;}
+        .slideBox{
+            width: 395px;
+            height: 160px;
+            background-color: #000000;
+            margin: 50px auto;
+        }
+        .slideBox ul{
+            float: left;
+            
+        }
+        .slideBox ul a{
+            width: 25px;
+            height: 160px;
+            float: left;
+        }
+        .slideBox ul li{
+            width: 0px;
+            height: 160px;
+            float: left;
+            transition: all 0.4s;
+            overflow: hidden;
+        }
+        .slideBox ul li img{
+            width: 320px;
+            height: 160px;
+        }
+        .slideBox ul:nth-of-type(1) li{
+            width: 320px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideBox">
+        <ul>
+            <a href="#"><img src="orange01.png" alt=""></a>
+            <li><img src="menuimg01.jpg" alt=""></li>
+        </ul>
+        <ul>
+            <a href="#"><img src="blue01.png" alt=""></a>
+            <li><img src="menuimg02.jpg" alt=""></li>
+        </ul>
+        <ul>
+            <a href="#"><img src="blue01.png" alt=""></a>
+            <li><img src="menuimg03.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

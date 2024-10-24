@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+
+
+$(function() {
+    // 현재 활성화된 요소를 추적할 변수
+    let currentActive = null;
+
+    // 슬라이드 박스 클릭 이벤트
+    $('.slideBox ul a').click(function() {
+        const $this = $(this);
+        const $nextLi = $this.next('li');
+        
+        // 현재 활성화된 요소가 있다면 이전 요소 초기화
+        if (currentActive && currentActive !== $this) {
+            currentActive.next('li').css('width', '0px');
+            currentActive.children('img').attr('src', 'blue01.png');
+        }
+
+        // 새 요소 활성화
+        if ($nextLi.css('width') === '0px') {
+            $nextLi.css('width', '320px');
+            $this.children('img').attr('src', 'orange01.png');
+            currentActive = $this; // 현재 활성화된 요소 업데이트
+        } else {
+            // 이미 활성화된 요소 클릭 시
+            $nextLi.css('width', '0px');
+            $this.children('img').attr('src', 'blue01.png');
+            currentActive = null; // 비활성화 상태
+        }
+    });
+
+    // 슬라이드 박스 hover 이벤트
+    $('.slideBox ul a').hover(function() {
+        const $this = $(this);
+        const $nextLi = $this.next('li');
+
+        if ($nextLi.css('width') === '0px') {
+            $this.children('img').attr('src', 'pink01.png');
+        }
+    }, function() {
+        const $this = $(this);
+        const $nextLi = $this.next('li');
+
+        if ($nextLi.css('width') === '0px') {
+            $this.children('img').attr('src', 'blue01.png');
+        }
+    });
+});
+
+    </script>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul,li{list-style: none;}
+        body{
+            background-color: #000000d0;
+        }
+        img{display: block;}
+        .slideBox{
+            width: 395px;
+            height: 160px;
+            background-color: #fff;
+            margin: 50px auto;
+        }
+        .slideBox ul{
+            float: left;
+            
+        }
+        .slideBox ul a{
+            width: 25px;
+            height: 160px;
+            float: left;
+        }
+        .slideBox ul li{
+            width: 0px;
+            height: 160px;
+            float: left;
+            transition: all 0.4s;
+            overflow: hidden;
+        }
+        .slideBox ul li img{
+            width: 320px;
+            height: 160px;
+        }
+        .slideBox ul:nth-of-type(1) li{
+            width: 320px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideBox">
+        <ul>
+            <a href="#"><img src="orange01.png" alt=""></a>
+            <li><img src="menuimg01.jpg" alt=""></li>
+        </ul>
+        <ul>
+            <a href="#"><img src="blue01.png" alt=""></a>
+            <li><img src="menuimg02.jpg" alt=""></li>
+        </ul>
+        <ul>
+            <a href="#"><img src="blue01.png" alt=""></a>
+            <li><img src="menuimg03.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>
