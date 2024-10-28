@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+a {text-decoration: none;}
+section{width: 100%;}
+
+article { width: 100%;height: 100vh;
+}
+#article1 {
+    background-color: rgba(0, 0, 255, 0.171);
+    position: absolute;
+    left: 0;
+}
+
+#article2 {
+    background-color: rgba(0, 128, 0, 0.185);
+    position: absolute;
+    left: 100%;
+}
+
+#article3 {
+    background-color: rgba(255, 0, 0, 0.192);
+    position: absolute;
+    left: 200%;
+}
+
+#article4 {
+    background-color: rgba(0, 0, 0, 0.212);
+    position: absolute;
+    left: 300%;
+}
+
+nav{
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    height: 50px;
+    width: 400px;
+    z-index: 20;
+}
+nav ul{
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    list-style: none;
+}
+nav ul li{
+    float: left;
+}
+nav ul li a{
+    display: block;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    color: #7a7a7a;
+    text-align : center;
+    font-weight: bold;
+
+}
+nav ul li.on a{
+    color: #000;
+    font-weight: bold;
+}
+
+</style>
+
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="on"><a href="#article1">회사소개</a></li>
+            <li><a href="#article2">제품소개</a></li>
+            <li><a href="#article3">커뮤니티</a></li>
+            <li><a href="#article4">다운로드</a></li>
+        </ul>
+    </nav>
+    <section>
+        <article id="article1"></article>
+        <article id="article2"></article>
+        <article id="article3"></article>
+        <article id="article4"></article>
+    </section>
+
+    <script>
+        $(function(){
+            var a0 = $('section > article').eq(0).offset().left;
+            var a1 = $('section > article').eq(1).offset().left;
+            var a2 = $('section > article').eq(2).offset().left;
+            var a3 = $('section > article').eq(3).offset().left;
+
+            $(window).scroll(function(){
+                var sct = $(this).scrollLeft();
+                if(sct >= a0 && sct < a1){
+                    $('nav ul li').removeClass('on');
+                    $('nav ul li').eq(0).addClass('on')
+                }
+                else if(sct >= a1 && sct < a2){
+                    $('nav ul li').removeClass('on');
+                    $('nav ul li').eq(1).addClass('on')
+                }else if(sct >= a2 && sct < a3){
+                    $('nav ul li').removeClass('on');
+                    $('nav ul li').eq(2).addClass('on')
+                }else{
+                    $('nav ul li').removeClass('on');
+                    $('nav ul li').eq(3).addClass('on')
+                }
+            })
+            
+            $('nav ul li').click(function(){
+                var i = $(this).index();
+                // $('nav ul li').removeClass('on');
+                // $('nav ul li').eq(i).addClass('on');
+                var offset_l = $('section > article').eq(i).offset().left;
+                $('html').stop().animate({scrollLeft:offset_l},1300);
+                //'html' = window?? 강사님은 $('html, body') 라고 적으셨는데 이유가 뭘까. css에 scroll-top이 있나?
+                // $(window).scroll(offset_t+'px')
+
+                return false //링크금지
+            })
+        })
+
+    </script>
+
+</body>
+
+</html>

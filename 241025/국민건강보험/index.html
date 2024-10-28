@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(function(){
+            var slideimg = $('.slides li')
+            var imgNum = $('.slides li').length
+            // alert(imgNum)
+            var currentSlideIndex = 0;
+
+            $('.btnBox p').text((currentSlideIndex+1)+' / '+imgNum)
+
+            $('.nextBtn').click(function(){
+
+                $('.slides li').eq(currentSlideIndex).css('left',0).stop().animate({'left':'-100%'},300)
+
+                if(currentSlideIndex == imgNum-1){
+                    currentSlideIndex = 0
+                    $('.slides li').eq(currentSlideIndex).css('left','100%').stop().animate({'left':'0'},300)
+                }else{
+                    currentSlideIndex++;
+                    $('.slides li').eq(currentSlideIndex).css('left','100%').stop().animate({'left':'0'},300)
+                }
+                $('.btnBox p').text((currentSlideIndex+1)+' / '+imgNum)
+
+
+            })
+
+            $('.prevBtn').click(function(){
+
+                $('.slides li').eq(currentSlideIndex).css('left',0).stop().animate({'left':'100%'},300)
+
+                if(currentSlideIndex == 0){
+                    currentSlideIndex = imgNum-1
+                    $('.slides li').eq(currentSlideIndex).css('left','-100%').stop().animate({'left':'0'},300)
+                }else{
+                    currentSlideIndex--;
+                    $('.slides li').eq(currentSlideIndex).css('left','-100%').stop().animate({'left':'0'},300)
+                }
+                $('.btnBox p').text((currentSlideIndex+1)+' / '+imgNum)
+
+            })
+
+            $('.pauseBtn').click(function(){
+                if($('.pauseBtn').hasClass('on')==false){
+                    $(this).addClass('on');
+                    clearInterval(id)
+                }else{
+                    $(this).removeClass('on');
+                    id = setInterval(autoPlay,3000);
+                }
+                
+            })
+
+
+            function autoPlay(){
+                $('.nextBtn').trigger('click')
+            }
+
+            var id = setInterval(autoPlay,3000);
+        })
+        
+    </script>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul,li{list-style: none;}
+        a{text-decoration: none;}
+        .slidesFrame{
+            width: 400px;
+            height: 300px;
+            border-radius: 15px;
+            background-color: rgba(255, 228, 196, 0.308);
+            position: relative;
+            margin: 50px auto;
+        }
+        img{display: block;}
+        .slidesFrame h4{
+            float: left;
+            font-weight: bold;
+            font-size: 20px;
+            margin: 15px 0 0 20px;
+        }
+        .slidesFrame .btnBox{
+            float: right;
+            margin: 15px 50px 0 0;
+        }
+        .slidesFrame .btnBox li{
+            display: block;
+            width: 9px;
+            height: 15px;
+            margin: 5px 10px;
+            float: left;
+        }
+        .slidesFrame .btnBox p{
+            display: block;
+            float: left;
+            width: 70px;
+            height: 20px;
+        }
+        .slides{
+            position: absolute;
+            top: 50px;
+            left: 24px;
+            border-radius: 15px;
+            width: 350px;
+            height: 234px;
+            overflow: hidden;
+        }
+        .slides li{
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+        .slides li:nth-of-type(1){
+            left: 0;
+        }
+        .pauseBtn{
+            width: 16px;
+            height: 16px;
+            background: url(images/ico_16_pause.png) 5px 0;
+        }
+        .on{
+            background: url(images/ico_16_play.png) -3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slidesFrame">
+        <h4>홍보존</h4>
+        <ul class="btnBox">
+            <p>n  /n</p>
+            <li class="prevBtn"><a href="#"><img src="images/ico_16_prev.png" alt=""></a></li>
+            <li class="pauseBtn"><a href="#"></a></li>
+            <li class="nextBtn"><img src="images/ico_16_next.png" alt=""></li>
+        </ul>
+        <ul class="slides">
+            <li><img src="images/20240208_pr_pc01.png" alt=""></li>
+            <li><img src="images/20240905_pr_pc01.png" alt=""></li>
+            <li><img src="images/pr_20221114.png" alt=""></li>
+            <li><img src="images/pr_20240429.png" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

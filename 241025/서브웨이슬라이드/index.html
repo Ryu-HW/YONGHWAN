@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(function(){
+            var currentIndex = 0;
+            
+            $('.btnBox li').click(function(){
+                
+                currentIndex = $(this).index()
+                $('.btnBox li').removeClass('on');
+                $(this).addClass('on');
+                $('.slidesFrame').stop().animate({'margin-left':-600*currentIndex},300)
+
+            });
+
+        })
+    </script>
+    <style>
+        *{padding: 0;margin: 0;}
+        ul,li{list-style: none;}
+        a{text-decoration: none;}
+        img{display: block;}
+
+        #wrap{
+            width: 600px;
+            height: 137.5px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+
+        }
+        .slidesFrame{
+            width: 600px;
+            height: 137.5px;
+        }
+        .slides{
+            width: 10000px;
+        }
+        .slides li{
+            float: left;
+        }
+
+        .slides li a img{
+            width: 600px;
+            height: auto;
+        }
+        .btnBox{
+            width: 120px;
+            height: 20px;
+            position: absolute;
+            top: 80%;
+            left: 70%;
+        }
+        .btnBox li{
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            float: left;
+            border-radius: 5px;
+            margin: 5px 4px;
+            transition: all 0.3s;
+        }
+        .btnBox li.on{
+            width: 30px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="slidesFrame">
+            <ul class="slides">
+                <li><a href="#"><img src="images/손주문 선주문_메인 PC 배너_20240812120139528.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images//썹픽_PC 메인 배너_20240625120327174.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/안창 비프_PC 메인 배너_20240902081309393.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/오늘의 수프_PC 메인 배너_20240625120302090.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/홈페이지-스트립_1920x440_20240319070626544.jpg" alt=""></a></li>
+            </ul>
+            <ul class="btnBox">
+                <li class="on"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
