@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(function(){
+            $('header > ul').hover(function(){
+                $(this).css('height','350px');
+                $(this).children('.borderLine').css('opacity','1')
+            },function(){
+                $(this).css('height','50px');
+                $(this).children('.borderLine').css('opacity','0')
+            })
+
+
+            $('header > ul > li >ul > li > a').hover(function(){
+                $(this).css('background','url(img/menu_hover.png) no-repeat');
+            },function(){
+                $(this).css('background','url(img/menu_hover.png) no-repeat -500%');
+            })
+
+
+            var indexSlide = 0;
+            var slidesNum = $('.slides > li').length
+            $('.slideBtn .mainNext').click(function(){
+                if(indexSlide == slidesNum-1){
+                    $('.slides > li').eq(indexSlide).css('opacity','0')
+                    indexSlide = 0;
+                    $('.slides > li').eq(indexSlide).css('opacity','1')
+                }else{
+                    $('.slides > li').eq(indexSlide).css('opacity','0')
+                    indexSlide++;
+                    $('.slides > li').eq(indexSlide).css('opacity','1')
+                }
+
+            })
+            $('.slideBtn .mainPrev').click(function(){
+                if(indexSlide == 0){
+                    $('.slides > li').eq(indexSlide).css('opacity','0')
+                    indexSlide = slidesNum-1;
+                    $('.slides > li').eq(indexSlide).css('opacity','1')
+                }else{
+                    $('.slides > li').eq(indexSlide).css('opacity','0')
+                    indexSlide--;
+                    $('.slides > li').eq(indexSlide).css('opacity','1')
+                }
+
+            })
+
+
+
+        });
+
+    </script>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul,li{list-style: none;}
+        a{text-decoration: none; color: #000;}
+        img{vertical-align: middle;}
+        h1{
+            display: block;
+            width: 100%;
+            height: 111px;
+            text-align: center;
+            line-height: 111px;
+        }
+        header>ul{
+            position: absolute;
+            top: 111px;
+            height: 50px; /* 50px */
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: url(img/header_line.png) no-repeat;
+            background-color: #fff;
+            border-bottom: 1px solid #0000002a;
+            z-index: 30;
+            transition: all 0.3s;
+        }
+        header>ul>.borderLine{
+            width: 100%;
+            height: 2px;
+            background: url(img/header_line.png) no-repeat;
+            position: absolute;
+            top: 50px;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        header>ul>li>a{
+            font-weight: 600;
+            line-height: 50px;
+            text-align: center;
+            display: block;
+            width: 200px;
+            height: 50px;
+        }
+        header>ul>li>ul>li{
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        header>ul>li>ul>li>a{
+            padding: 10px;
+            height: 31px;
+        }
+        header>ul>li>ul>li:first-child{
+            margin-top: 10px;
+        }
+        #container1{
+            height: 840px;
+            width: 100%;
+            margin-top: 50px;
+            position: relative;
+        }
+        .slide1{
+            width: 100%;
+            height: 100%;
+            background: url(img/main_visual.jpg) no-repeat;
+            position: absolute;
+            transition: all 0.8s;
+            opacity: 0;
+            /* 왜 백그라운드 사이즈가 유동적이지 않은가. */
+        }
+        .slide2{
+            width: 100%;
+            height: 100%;
+            background: url(img/main_visual2.jpg) no-repeat;
+            position: absolute;
+            transition: all 0.8s;
+            /* opacity: 0; */
+        }
+        .middleBox{
+            background: url(img/main_txt_box.png) no-repeat;
+            width: 636px;
+            height: 296px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .textBox{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            font-size: 30px;
+            width: max-content;
+        }
+    
+        .textBox p{
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .slideBtn{
+            width: 1000px;
+            height: 840px;
+            position: relative;
+            margin: 0 auto;
+        }
+        .slideBtn li{
+            width: 75px;
+            height: 75px;
+            position: absolute;
+            top: 45%;
+            z-index: 20;
+            text-align: center;
+            line-height: 75px;
+            border: 1px solid #666;
+            border-radius: 50%;
+        }
+        .slideBtn img{
+            width: 15px;
+            height: 25px;
+        }
+        .slideBtn .mainNext{
+            right: 0;
+        }
+        .slideBtn .mainPrev{
+            left: 0;
+    
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href=""><img src="img/logo.png" alt=""></a></h1>
+        <ul>
+            <div class="borderLine"></div>
+            <li><a href="#">ABOUT 다소니</a>
+                <ul>
+                    <li><a href="">인사말</a></li>
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">오시는길</a></li>
+                    <li><a href="">마음산책</a></li>
+                    <li><a href="">후기</a></li>
+                </ul>
+            </li>
+            <li><a href="#">상담진 소개</a>
+                <ul>
+                    <li><a href="">인사말</a></li>
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">오시는길</a></li>
+                    <li><a href="">마음산책</a></li>
+                    <li><a href="">후기</a></li>
+                </ul>
+            </li>
+            <li><a href="#">심리상담</a>
+                <ul>
+                    <li><a href="">인사말</a></li>
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">오시는길</a></li>
+                    <li><a href="">마음산책</a></li>
+                    <li><a href="">후기</a></li>
+                </ul>
+            </li>
+            <li><a href="#">심리검사</a>
+                <ul>
+                    <li><a href="">인사말</a></li>
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">오시는길</a></li>
+                    <li><a href="">마음산책</a></li>
+                    <li><a href="">후기</a></li>
+                </ul>
+            </li>
+            <li><a href="#">관계테라피</a>
+                <ul>
+                    <li><a href="">인사말</a></li>
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">오시는길</a></li>
+                    <li><a href="">마음산책</a></li>
+                    <li><a href="">후기</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <div id="container1">
+
+        <ul class="slides">
+
+            <li class="slide1">
+                <ul class="middleBox">
+                    <li class="textBox">
+                        <p>언택트시대 필수 과정</p>
+                        <h2>비대면 상담<br>비대면검사</h2>
+                        <p>이제 당신의 공간에서 전문 상담사를 만나보세요</p>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="slide2">
+                <ul class="middleBox">
+                    <li class="textBox">
+                        <p>가격부탐 Down x 치료기대효과 up</p>
+                        <h2>다소니관계테라피</h2>
+                        <p>검사와 상담이 모두 필요한 여러분에게 딱!</p>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+        <ul class="slideBtn">
+            <li class="mainPrev"><a href="#"><img src="img/main_prev.png" alt=""></a></li>
+            <li class="mainNext"><a href="#"><img src="img/main_next.png" alt=""></a></li>
+        </ul>
+    </div>
+</body>
+</html>
