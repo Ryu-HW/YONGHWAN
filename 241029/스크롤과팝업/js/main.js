@@ -109,20 +109,20 @@ $(function(){
         return false;
     });
 
-    // $('section > div').mousewheel(function(event,d){
-    //     //event 마우스휠의 정보
-    //     //d 는 이동방향 
-    //     //마우스 휠을 위로 스크롤하면 양수(+1) / 아래음수(-1)
-    //    // console.log(d);
-    //     if(d > 0){ //휠 위로
-    //         var prev = $(this).prev().offset().top;
-    //         $('html,body').stop().animate({scrollTop:prev},1000,'easeOutBounce');
-    //     }
-    //     if(d < 0){//휠 아래로
-    //         var next = $(this).next().offset().top;
-    //         $('html,body').stop().animate({scrollTop:next},1000,'easeOutBounce');
-    //     }ㄴ
-    // });
+    $('section > div').mousewheel(function(event,d){
+        //event 마우스휠의 정보
+        //d 는 이동방향 
+        //마우스 휠을 위로 스크롤하면 양수(+1) / 아래음수(-1)
+       // console.log(d);
+        if(d > 0){ //휠 위로
+            var prev = $(this).prev().offset().top;
+            $('html,body').stop().animate({scrollTop:prev},1000,'easeOutBounce');
+        }
+        if(d < 0){//휠 아래로
+            var next = $(this).next().offset().top;
+            $('html,body').stop().animate({scrollTop:next},1000,'easeOutBounce');
+        }ㄴ
+    });
 
     
     //<script src="js/jquery.mousewheel.min.js"></script> 와 사용 가능

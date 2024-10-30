@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery.bxsliderHW.css">
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+
+
+
+    <script>
+        $(function(){
+            
+            $('.slides').bxSlider({
+                auto:true,
+                touchEnabled:false,
+                controls:false
+            })
+            // https://bxslider.com/options
+        })
+    </script>
+    <style>
+        *{padding: 0;margin: 0;}
+        .slidesFrame{
+            width: 600px;
+            height: 137.5px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="slidesFrame">
+            <ul class="slides">
+                <li><a href="#"><img src="images/손주문 선주문_메인 PC 배너_20240812120139528.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images//썹픽_PC 메인 배너_20240625120327174.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/안창 비프_PC 메인 배너_20240902081309393.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/오늘의 수프_PC 메인 배너_20240625120302090.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/홈페이지-스트립_1920x440_20240319070626544.jpg" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
