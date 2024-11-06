@@ -1,0 +1,130 @@
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: black;}
+body{
+    overflow-x: hidden;
+}
+header{
+    width: 1274px;
+    height: 111px;
+    margin: 0 auto; 
+}
+.header_box{
+    width: 1000px;
+    height: 111px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.gnb{text-align: center;}
+.gnb > ul{
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid #ddd;
+    /* position: relative; */
+}
+.shadow{
+    position: absolute;
+    background-color: white;
+    border-top: 2px solid #ddd;
+    top: 160px;
+    left: 0;
+    width: 1946px;
+    height: 0px;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.2s;
+}
+.gnb ul ul{
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    height: 0px;
+    transition: height 0.2s;
+}
+.gnb > ul > li > a{
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+}
+.gnb ul ul li a{
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+}
+.gnb ul:hover ul{
+    height: 300px;
+}
+.gnb ul:hover + .shadow{
+    height: 300px;
+    border-bottom: 2px solid #ddd;
+}
+section{
+    position: relative;
+}
+section ul{
+    display: flex;
+}
+section ul li img{
+    position: absolute;
+    width: 1946px;
+}
+.box{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    z-index: 4;
+}
+.next_box{
+    top: 350px;
+    right: 250px;
+    background: url(../img/next.png)no-repeat center center;
+}
+.prev_box{
+    top: 350px;
+    left: 250px;
+    background: url(../img/prev.png)no-repeat center center;
+}
+
+.s1.on {
+    opacity: 1;         
+}
+
+.s2.on {
+    opacity: 1;          
+}
+.s1:not(.on),
+.s2:not(.on) {
+    opacity: 0;          
+}
+.s1,.s2{transition: all 0.3s;}
+.text_area{
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    background: url(../img/mainbox.png)no-repeat;
+    background-size: cover;
+    top: 220px;
+    left: 400px;
+    text-align: center;
+}
+.text_box{
+    margin-top: 150px;
+}
+p{
+    visibility: hidden;
+    transition: all 0.3s;
+    transform: translateY(20px);}
+p.on{
+    /* opacity: 1; */
+    transform: translateY(0);
+    visibility: visible;}
+/* p:not(.on){
+    
+} */
