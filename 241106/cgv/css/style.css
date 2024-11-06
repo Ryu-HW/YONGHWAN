@@ -152,6 +152,7 @@ nav ul{width:720px; position: relative;z-index: 999999;}
 .btns .prev{
     background: rgba(255, 255, 255, 0.8) url(../img/arrowL.png) center / 9px 13px scroll no-repeat;
     left: 20%;
+    opacity: 0;
 }
 .btns .next{
     background: rgba(255, 255, 255, 0.8) url(../img/arrowR.png) center / 9px 13px scroll no-repeat;
