@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+</head>
+<script>
+//  $.getJSON("demo_ajax_json.js", function(result){
+//     $.each(result, function(i, field){
+//       $("div").append(field + " ");
+//     });
+//   });
+//   $.getJSON("날씨(파일)경로", function(data){
+//     data 할일
+//   });
+
+  $.getJSON("http://api.openweathermap.org/data/2.5/weather?id=1835553&appid=5477752ad0a0f94e079eb02bb09166c0&units=metric", function(data){
+    //alert(data.cod);
+    //alert(data.city.name);
+    //alert(data.list[1].main.temp);
+
+    var $ctemp = data.main.temp;
+    var $maxTemp = data.main.temp_max;
+    var $minTemp = data.main.temp_min;
+    var $cDate = data.dt_txt; //날짜-시간
+    var $wIcon = data.weather[0].icon;
+
+    var $now = new Date();
+    // var $cDate = $now.getFullYear() + '/' + ($now.getMonth()+1) + '/' + $now.getDate() + ' ' + $now.getHours() + '시' + $now.getMinutes() + '분';
+    // var $cDate =new Date().toLocaleDateString();
+    var $cDate = new Date().toLocaleString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }); //시간 표시법
+    $('.ctemp').append($ctemp);
+    $('.clowtemp').append($minTemp);
+    $('.chightemp').append($maxTemp);
+    //alert($wIcon);
+    $('h2').prepend($cDate); //h2 현재글씨 앞으로 날짜 시간 삽입
+    $('.cicon').append('<img src="https://openweathermap.org/img/wn/'+$wIcon+'@2x.png">');
+  });
+</script>
+
+<body>
+    <h1>Weather api</h1>
+    <h2> - 날씨예보</h2>
+    <div class="ctemp">현재온도 : </div>
+    <div class="clowtemp">최저 온도 : </div>
+    <div class="chightemp">최고 온도 : </div>
+    <div class="cicon">아이콘</div>
+    <!-- <img src="https://openweathermap.org/img/wn/10d@2x.png"> -->
+</body>
+</html>

@@ -25,7 +25,9 @@
 
 <!-- 제이쿼리 3.7 CDN -->
 <script src='https://code.jquery.com/jquery-3.7.0.min.js' crossorigin='anonymous'></script>
+<!-- 스와이퍼 라이브러리 -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
 <!-- 로컬 CSS -->
 <link rel='stylesheet' href='./css/style.css'/>
@@ -150,12 +152,13 @@
     </div>
 </div>
 <section id="contents">
-    <div class="btns">
-        <div class="prev"></div>
-        <div class="next"></div>
-    </div>
+    
     <div id="movieChartBeScreen_wrap">
         <div class="container">
+            <div class="btns">
+                <div class="prev"></div>
+                <div class="next"></div>
+            </div>
             <div class="tabBtn_wrap">
                 <h3><a href="#" class="active">무비차트</a></h3>
                 <h3><a href="#">상영예정작</a></h3>
@@ -163,8 +166,6 @@
             <a href="#" id="btnReserMovie">전체보기</a>
             <div class="movieChart_list">
                 <div class="listWrap">
-                    
-                    
                     <div class="slideBox">
                         <div class="imgWrap">
                             <img src="./img/87937_320.jpg" alt="윙카">
@@ -846,6 +847,134 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="event_wrap">
+        <div class="container">
+            <div class="event_title_wrap">
+                <h3>EVENT</h3>
+                <a href="#" class="btn_allView">전체보기</a>
+                <a href="#" class="btn_eventCntrol">play</a>
+            </div>
+            <div class="event_list_wrap">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="img_wrap">
+                                <img src="./img/event1.jpg" alt="">
+                            </div>
+                            <strong>[윙카] 4DX 포스터</strong>
+                            <span>2024.01.24~2024.02.06</span>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img_wrap">
+                                <img src="./img/event2.jpg" alt="">
+                            </div>
+                            <strong>[윙카] 4DX 포스터</strong>
+                            <span>2024.01.24~2024.02.06</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img_wrap">
+                                <img src="./img/event3.jpg" alt="">
+                            </div>
+                            <strong>[윙카] 4DX 포스터</strong>
+                            <span>2024.01.24~2024.02.06</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img_wrap">
+                                <img src="./img/event4.jpg" alt="">
+                            </div>
+                            <strong>[윙카] 4DX 포스터</strong>
+                            <span>2024.01.24~2024.02.06</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img_wrap">
+                                <img src="./img/event5.png" alt="">
+                            </div>
+                            <strong>[윙카] 4DX 포스터</strong>
+                            <span>2024.01.24~2024.02.06</span>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="specialHall_wrap">
+        <div class="container">
+            <div class="specialHall_title_wrap">
+                <h3>특별관</h3>
+                <a href="#" class="btn_allView">전체보기</a>
+            </div>
+            <div class="specialHall_content">
+                <div class="tapContent">
+                    <a href="#">
+                        <span class="img_wrap">
+                            <img src="./img/16390080561620.png" alt="">
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span class="img_wrap">
+                            <img src="./img/16553622935690.png" alt="">
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span class="img_wrap">
+                            <img src="./img/03.png" alt="">
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span class="img_wrap">
+                            <img src="./img/04.png" alt="">
+                        </span>
+                    </a>
+                </div>
+                <ul class="specialHall_list">
+                    <li>
+                        <a href="#">
+                            <strong>SUITE CINEMA</strong>
+                            <div class="specialHall_hashTag_wrap">
+                                <span class="specialHall_hashTag">
+                                    #호텔 컨셉의 프리미엄관
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <strong>CINE & LIVINGROOM</strong>
+                            <div class="specialHall_hashTag_wrap">
+                                <span class="specialHall_hashTag">
+                                    #신개념 소셜 상영관
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <strong>4DX</strong>
+                            <div class="specialHall_hashTag_wrap">
+                                <span class="specialHall_hashTag">
+                                    #모션시트 #오감체험
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <strong>CINE de CHEF</strong>
+                            <div class="specialHall_hashTag_wrap">
+                                <span class="specialHall_hashTag">
+                                    #쉐프가 있는 영화관
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
