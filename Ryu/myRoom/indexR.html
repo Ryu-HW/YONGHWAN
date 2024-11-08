@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(function(){
+            var eachFurni = $('.myRoom div')
+
+            eachFurni.mousedown(function(f){
+                var mouseX = f.pageX;
+                var mouseY = f.pageY;
+                var furni = $(this)
+                var fLeft = parseInt(furni.css('left'))
+                var fRight = parseInt(furni.css('top'))
+                // console.log(fLeft)
+
+                $(document).mousemove(function(e){
+                    var mouseX1 = e.pageX
+                    var mouseY1 = e.pageY
+                    furni.css('left',fLeft+(mouseX1 - mouseX),'px')
+                    furni.css('top',fRight+(mouseY1 - mouseY),'px')
+                })
+            });
+            $(document).mouseup(function(){
+                
+                $(document).off('mousedown')
+                $(document).off('mousemove')
+            })
+            
+
+
+
+
+
+
+
+            // wheelhandler 함수 외부로 정의
+            var wheelhandler = function(e) {
+                var furni = $(this);  // eachFurni 요소를 this로 참조
+                var delta = e.originalEvent.deltaY;
+                var thisDeg = furni.attr('dataDeg') || 0; // 초기값 설정하기
+
+                if (delta > 0) {
+                    thisDeg++;
+                } else {
+                    thisDeg--;
+                }
+
+                furni.css({'transform': 'rotate(' + thisDeg * 90 + 'deg)'});
+                furni.attr('dataDeg', thisDeg);
+                console.log(thisDeg);
+            };
+
+            eachFurni.mouseenter(function(f) {
+                var furni = $(this);
+
+                // wheel 이벤트를 해당 furni에만 바인딩
+                furni.on('wheel', wheelhandler);
+
+                // 마우스가 벗어날 때 wheel 이벤트 해제
+                furni.mouseout(function() {
+                    furni.off('wheel', wheelhandler);
+                });
+            });
+
+
+
+
+
+
+
+
+            
+        });
+    </script>
+    <style>
+        .myRoom{
+            position: relative;
+            width: 320px;
+            height: 490px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            margin: 100px auto;
+        }
+        .myRoom div{
+            position: absolute;
+            border: 1px solid #000;
+            border-top: 5px solid #000;
+            box-sizing: border-box;
+            top: 0;
+            left: 0;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+        .mainCom{
+            width: 220px;
+            height: 160px;
+        }
+        .subCom{
+            width: 120px;
+            height: 60px;
+        }
+        .bed{
+            width: 200px;
+            height: 110px;
+        }
+        .mirror{
+            height: 40px;
+            width: 35px;
+        }
+        .health{
+            width: 105px;
+            height: 90px;
+        }
+        .bookcase{
+            width: 40px;
+            height: 80px;
+        }
+        .counter{
+            width: 35px;
+            height: 60px;
+            font-size: 10px;
+        }
+        article{
+            width: 60px;
+            height: 30px;
+            position: absolute;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            bottom: 105px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="myRoom">
+        <div class="mainCom">메인 컴퓨터</div>
+        <div class="subCom">서브 컴퓨터</div>
+        <div class="bed">침대</div>
+        <div class="mirror">거울</div>
+        <div class="health">기구</div>
+        <div class="bookcase">책장</div>
+        <div class="counter">진열대</div>
+        <article></article>
+    </div>
+</body>
+</html>
