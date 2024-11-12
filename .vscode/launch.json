@@ -1,0 +1,112 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Casting",
+            "request": "launch",
+            "mainClass": "a1112.Casting",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "Byte",
+            "request": "launch",
+            "mainClass": "a1111.Byte",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "Calculator",
+            "request": "launch",
+            "mainClass": "a1111.Calculator",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "Hello",
+            "request": "launch",
+            "mainClass": "a1111.Hello",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "Integer43",
+            "request": "launch",
+            "mainClass": "a1111.Integer43",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "Long1",
+            "request": "launch",
+            "mainClass": "a1111.Long1",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "Var1",
+            "request": "launch",
+            "mainClass": "a1111.Var1",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "Var2",
+            "request": "launch",
+            "mainClass": "a1111.Var2",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "Var3",
+            "request": "launch",
+            "mainClass": "a1111.Var3",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "char1",
+            "request": "launch",
+            "mainClass": "a1111.char1",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "Escape",
+            "request": "launch",
+            "mainClass": "a1112.Escape",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "HelloWorld",
+            "request": "launch",
+            "mainClass": "a1112.HelloWorld",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "HelloWorld1",
+            "request": "launch",
+            "mainClass": "a1112.HelloWorld1",
+            "projectName": "YONGHWAN_73685aeb"
+        }
+    ]
+}

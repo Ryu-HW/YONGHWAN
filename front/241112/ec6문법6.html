@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 자바스크립트의 map() 함수는 배열의 각 요소에 대해 제공된 함수를 호출하여 새로운 배열을 반환하는 함수입니다. map()은 원본 배열을 수정하지 않고, 기존 배열의 요소를 가공한 새로운 배열을 생성하는 데 유용합니다.
+
+        // 기본 문법
+        // const newArray = array.map(callback(element, index, array), thisArg);
+        // callback: 배열의 각 요소에 대해 실행할 함수
+        // element: 처리할 현재 요소
+        // index (선택 사항): 현재 요소의 인덱스
+        // array (선택 사항): map이 호출된 배열 자체
+        // thisArg (선택 사항): callback 함수 내부에서 this로 사용할 값
+
+        //1. 배열의 모든 요소에 2를 곱하기
+        const numbers = [1,2,3,4,5];
+        const doubled = numbers.map(function(number){
+            return number *2;
+        });
+
+        // const doubled = numbers.map(number => number*2);
+
+        console.log(doubled);
+
+        //2. 객체 배열에서 특정속성만 추출하기
+        const users = [
+            {id:1, name:"Alice"},
+            {id:2, name:"Bob"},
+            {id:3, name:"Jimin"},
+        ];
+        // const names = users.map(user => user.name);
+
+        const names = users.map(function(user){
+            return user.name;
+        });
+
+        console.log(names);
+
+        //3. 배열의 각 요소에 인덱스를 함께 사용하기
+        const nums = [10,20,30];
+
+        const widthIndex = nums.map(function(number, index){
+            return `Index ${index} : ${number}`
+        })
+        
+
+        // const widthIndex = nums.map((number,index) => `Index ${index} : ${number}`);
+
+        console.log(widthIndex);
+
+
+        // 4. 문자열 배열을 대문자로 변환하기
+
+        const words = ["hello", "world", "javascript"];
+
+
+        // const uppercased = words.map(word => word.toUpperCase());
+
+        const uppercased = words.map(function(upper){
+            return upper.toUpperCase();
+        })
+
+        console.log(uppercased); // ["HELLO", "WORLD", "JAVASCRIPT"]
+
+        // 5. 조건부 가공
+        // 배열 요소의 값에 조건을 적용해 새로운 배열을 생성할 수도 있습니다.
+
+        // const evenOrOdd = numbers.map(number => (number % 2 === 0 ? "Even" : "Odd"));
+
+        const evenOrOdd = numbers.map(function(number){
+            // if(number % 2 === 0){
+            //     return "Even"
+            // }else{
+            //     return "Odd"
+            // }
+
+            return number % 2 === 0 ? "Even" : "Odd"
+        })
+
+        console.log(evenOrOdd); // ["Odd", "Even", "Odd", "Even", "Odd"]
+
+        // 6. 중첩된 배열 평탄화 (2차원 배열을 1차원으로 변환)
+        // map과 concat을 조합해 2차원 배열을 1차원으로 평탄화할 수 있습니다.
+
+        const nestedArray = [[1, 2], [3, 4], [5, 6]];
+        // const flatArray = nestedArray.map(arr => arr).flat();
+        const flatArray = nestedArray.map(function(nest){return nest}).flat();
+
+        console.log(flatArray); // [1, 2, 3, 4, 5, 6]
+
+        const nestedArray1 = [[[1,2], 3], [[2,3], 4], [[3,4], 5]];
+        const nee = nestedArray1.flat().flat();
+
+        console.log(nee);
+
+        const users1 = [
+            {id: 1, name: "Alice"},
+            {id: 2, name: "Bob"},
+            {id: 3, name: "Jimin"},
+            {id: 4, name: "Ryu"},
+            {id: 5, name: "Yong"},
+        ];
+
+        const users2 = [
+            {id: 1, name: "Alice"},
+            {id: 2, name: "Bob"},
+            {id: 3, name: "Jimin"},
+            {id: 4, name: "Ryu"},
+            {id: 5, name: "Yong"},
+        ];
+
+        const users3 = [users1, users2];
+
+        var fusers3 = users3.flat()
+
+        console.log(fusers3)
+
+        var a = 2;
+        leng = users1.length
+        for(i=0;i<leng;i++){
+            var idToFind = users1[a-1].id;
+
+            var namea = users1.map(function(user){
+                if(user.id == idToFind){
+                    return user.name;
+                }
+            }).filter(Boolean)[0]
+
+        }
+        console.log(namea);
+
+        // var ruser = users1.flat().flat()
+
+        // console.log(ruser);
+
+        // 이유는 모르지만 이건 플렛이 안 됨 유저에 배열이 하나라서 그런가?
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

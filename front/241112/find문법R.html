@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const users1 = [
+            {id: 1, name: "Alice"},
+            {id: 2, name: "Bob"},
+            {id: 3, name: "Jimin"},
+            {id: 4, name: "Ryu"},
+            {id: 5, name: "Yong"},
+        ];
+
+        const users2 = [
+            {id: 1, name: "Alice1"},
+            {id: 2, name: "Bob2"},
+            {id: 3, name: "Jimin3"},
+            {id: 4, name: "Ryu4"},
+            {id: 5, name: "Yong5"},
+        ];
+
+        const users3 = [users1, users2];
+
+        var a = 2;
+        var idToFind = users1[a - 1].id;
+
+        var user = users1.find(function(user) {
+            return user.id === idToFind; //여기서 반환하는 건 해당 이름이 아니라 해당 배열.
+        });
+
+        
+
+        var namea = user ? user.name : "해당 id 없음";  // 해당 id를 가진 사용자가 있으면 이름 반환, 없으면 빈 문자열
+
+        console.log(namea);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
