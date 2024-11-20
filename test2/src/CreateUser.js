@@ -3,7 +3,7 @@
 
 
 
-function CreateUser({username, email, onChange, onCreate}){
+function CreateUser({username, email, onChang, onCreat}){
 
 
     return(
@@ -11,18 +11,18 @@ function CreateUser({username, email, onChange, onCreate}){
             <input 
                 name="username"
                 placeholder="계정명"
-                onChange={onChange}
+                onChange={onChang}
                 value={username}
                 
             />
             <input 
                 name="email"
                 placeholder="이메일"
-                onChange={onChange}
+                onChange={onChang}
                 value={email}
 
             />
-            <button onClick={onCreate}>등록</button>
+            <button onClick={onCreat}>등록</button>
         </div>
     )
 }export default CreateUser;
