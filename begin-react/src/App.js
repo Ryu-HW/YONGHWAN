@@ -1,13 +1,11 @@
-// import Hello from "./Hello";
-// import Wrapper from "./Wrapper";
-import UserCard from './UserCard';
+
 import './App.css';
-
-
+import InputSample1 from './InputSample1';
 function App(){
-
-  return(
-    <UserCard name="Alice" age={30} location="New York"/>
+  
+  return( 
+   <InputSample1 />
   );
+
 }
 export default App;
