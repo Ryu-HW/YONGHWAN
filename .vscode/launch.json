@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main1",
+            "request": "launch",
+            "mainClass": "a1129.Hak4.Main1",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "B",
+            "request": "launch",
+            "mainClass": "a1126.sec06.package1.B",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
+            "name": "final1",
+            "request": "launch",
+            "mainClass": "a1122.final1",
+            "projectName": "YONGHWAN_73685aeb"
+        },
+        {
+            "type": "java",
             "name": "Casting",
             "request": "launch",
             "mainClass": "a1112.Casting",
