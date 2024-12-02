@@ -6,9 +6,8 @@ import java.util.Scanner;
 public class Loan {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        LoaManager manager = new LoaManager();
+        LoaManager manager = new LoaManager(); //생성
         boolean flag = true;
-        boolean flag2 = true;
         int choice2;
         while (flag) {
             System.out.println("\n 도서관");
@@ -44,7 +43,9 @@ public class Loan {
                                 String bookName = scan.nextLine();
                                 manager.searchBook(bookName);
                             }
-
+                            default -> {
+                                continue;
+                            }
                         }
                 }
                 case 2 -> {
@@ -57,6 +58,22 @@ public class Loan {
                     choice2 = scan.nextInt();
                     scan.nextLine(); 
 
+                    switch (choice2) {
+                        case 1 ->{
+                            manager.showLoanedBooks();
+                        }
+                        
+                        case 2 ->{
+                            System.out.println("\n 반납할 책 이름을 입력해주세요.");
+                            System.out.print(" >> ");
+                            String bookName = scan.nextLine();
+                            manager.returnBook(bookName);
+                        }
+                        default -> {
+                            continue;
+                        }
+
+                    }
                 }
                 case 3 -> {
                     System.out.println("\n - 관리자 -");
@@ -70,11 +87,42 @@ public class Loan {
 
                     choice2 = scan.nextInt();
                     scan.nextLine(); 
-
+                    switch (choice2) {
+                        case 1 ->{
+                            manager.showAllBooks();
+                            manager.showLoanedBooks();
+                        }
+                        
+                        case 2 ->{
+                            manager.addBook();
+                            System.out.println("책이 추가되었습니다.");
+                        }
+                        case 3 ->{
+                            System.out.println("\n 삭제할 책 이름을 입력해주세요.");
+                            System.out.print(" >> ");
+                            String bookName = scan.nextLine();
+                            manager.removeBook(bookName);
+                        }
+                        case 4 ->{
+                            System.out.println("\n 수정할 책 이름을 입력해주세요.");
+                            System.out.print(" >> ");
+                            String bookName = scan.nextLine();
+                            manager.updateBook(bookName);
+                        }
+                        case 5 ->{
+                            System.out.println("\n 내용을 볼 책의 이름을 입력해주세요.");
+                            System.out.print(" >> ");
+                            String bookName = scan.nextLine();
+                            manager.bookInfo(bookName);
+                        }
+                        default -> {
+                            continue;
+                        }
+                    }
 
                 }
                 case 4 -> {
-
+                    flag = false;
 
                 }
                     

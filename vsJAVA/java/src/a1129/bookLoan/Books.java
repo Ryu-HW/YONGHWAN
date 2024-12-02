@@ -5,12 +5,12 @@ public class Books {
     private String author;
     private int number;
     private double ISBN;
-    
+
     public Books(String name, String author, int number, double ISBN) {
         this.name = name;
         this.author = author;
         this.number = number;
-        ISBN = ISBN;
+        this.ISBN = ISBN;
     }
 
     public Books() {
@@ -54,7 +54,7 @@ public class Books {
 
     @Override
     public String toString() {
-        return "책 정보 - 제목 : " + name + ", 저자 : " + author + ", 재고 : " + number + ", ISBN : " + ISBN;
+        return "책 정보 - 제목 : " + name + ", 저자 : " + author + ", 권수 : " + number + ", ISBN : " + ISBN;
     }
 
 
