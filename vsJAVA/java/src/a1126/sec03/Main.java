@@ -1,7 +1,6 @@
 package a1126.sec03;
 
-import a1126.sec03_1.Child;
-import a1126.sec03_1.Parent;
+
 
 class Parent {
     Parent() {
