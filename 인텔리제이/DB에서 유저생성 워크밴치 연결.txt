@@ -1,0 +1,107 @@
+
+(유저 생성, 권한부여?)
+CREATE USER '{username}'@'localhost' IDENTIFIED BY '{password}';
+GRANT ALL PRIVILEGES ON {database}.* TO '{username}'@'localhost';
+FLUSH PRIVILEGES;
+
+
+
+(테이블 만들기)
+create table highgarden_db.board_table
+(
+id bigint primary key auto_increment,
+ boardTitle varchar(50),
+ boardWriter varchar(20),
+ boardPass varchar(20),
+ boardContents varchar(500),
+ boardHits int default 0,
+ createdAt datetime default now(), 
+ fileAttached int default 0
+);
+
+(두번째)
+create table highgarden_db.board_file_table
+(
+ id bigint auto_increment primary key,
+ originalFileName varchar(100),
+ storedFileName varchar(100),
+ boardId bigint,
+ constraint fk_board_file foreign key(boardId) references board_table(id) on delete cascade (외래키가 참조돼있는 형태)
+);
+두 번째는 연구 해야할듯?
+delete cascade 게시글 지워지면 같이 지워져라
+
+//mybatis는 mysql도 같이 써야함
+----------------------------------------게시판3
+application.properties - 를! application.yml로 확장자를 변경해서 사용한다 (mybatis)
+
+#어플리케이션 포트 -> 디폴트가 8080 바꿀 수 있음 !
+server:
+  port: 8080
+
+spring:
+  datasource:
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost:{SQLDBport번호}/{db이름}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+  username: {유저이름}
+  password: {비밀번호}
+# mybatis(주석)
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:mybatis-config.xml
+
+를 입력한다. 여기서는 들여쓰기가 중요하다고 함, sprin:뒤에 나오는 건 해당 스프링과 연결될 sql 정보일듯?
+아래 마이바틱스는 아직 모름
+
+resoures 폴더 아래 mapper 생성 후 board-mapper.xml 생성. (db에 입력될 명령어를 씀 Repository랑 직접적으로 연결됨)
+
+resoures 폴더 바로 아래 mybatis-config.xml 생성. 이건 자바에 내장돼있는 타입 외의 내가 만든 객체타입의 경로를 지정해서 간단히 명하게 함
+
+application.yml을 pdf파일에서 가져오면 안 됨!!
+---------------------------
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/highgarden_db?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: highgarden_user
+    password: 1234
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:mybatis-config.xml
+---------------------------
+이거 써야함
+
+
+해당 데이터베이스에 기반해서 DTO 객체 생성
+
+BoardController생성 어노케이션?(@) Controller 기입
+
+@RequiredArgsConstructor 어노케이션 +
+private final BoardService boardService; 에서 final을 쓰면 @Autowired랑 같다고 함 [@Autowired는 어떤 기능일까?]
+
+BoardService 생성 레포지토리와 연결. 레포지토리는 db에 바로 연결함, 서비스는 연결하기 전에 잡다한 알고리즘을 실행 후 넘겨줌
+
+Service 어노테이션 - @Service  @RequiredArgsConstructor
+private final BoardRepository boardRepository; 서비스는 레포지토리 final 해줌 [왜 쓰는 걸까?]
+
+
+BoardRepository 생성 리소스/매퍼/board-mapper.xml 에 연결.
+
+어노테이션 - @Repository @RequiredArgsConstructor
+
+private final SqlSessionTemplate sql; 이걸 적어주는데 , 아마 mybatis관련인 듯 하다. [이건 뭘까?]
+
+그리고 BoardDTO를 받아오는 void매서드를 만드는데, sql.insert sql을 이용해서 board-mapper랑 연결
+
+    public void save(BoardDTO boardDTO) {
+        sql.insert("Board.save", boardDTO);
+    }
+이런식. boardDTO 말고 id를 받아올 수도 있다.
+
+
+th:each=""
+th:text="" 등등 thymleaf의 기능이 궁금하다!

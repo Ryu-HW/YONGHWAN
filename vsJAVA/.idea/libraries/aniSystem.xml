@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="aniSystem">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/java/src/a1127/aniSystem.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
